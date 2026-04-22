@@ -3,7 +3,7 @@ import { LegalPage, LegalH2 } from "@/components/legal-page"
 import { PROPERTY } from "@/lib/rooms-data"
 
 export const metadata: Metadata = {
-  title: "Liquid Blue Guest House — Cancellation Policy",
+  title: "Liquid Blue Guest House  Cancellation Policy",
   description:
     "Cancellation and forfeiture rules for bookings at Liquid Blue Guest House, Louis Trichardt.",
 }

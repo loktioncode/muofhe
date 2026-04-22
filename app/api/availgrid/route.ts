@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server"
-
-const BBID = 39595
+import { NIGHTSBRIDGE_BBID } from "@/lib/site-config"
 
 export async function POST(request: Request) {
   try {
@@ -15,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     const payload = {
-      bbid: BBID,
+      bbid: NIGHTSBRIDGE_BBID,
       nbid: 0,
       extbbid: "",
       clientloginkey: null,

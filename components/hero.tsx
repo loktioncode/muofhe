@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/popover"
 import { format, differenceInDays, addDays, startOfDay } from "date-fns"
 import { AvailabilityModal, type AvailRoom } from "@/components/availability-modal"
+import { HERO_BACKGROUND_IMAGE } from "@/lib/lodge-media"
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/site-config"
 
 function formatDisplayDate(date: Date) {
   return format(date, "dd MMM ''yy")
@@ -95,14 +97,13 @@ export function Hero() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/LIQUID BLUE PHOTOS/EXT/IMG_610511.png"
-            alt="Liquid Blue Guest House exterior"
+            src={HERO_BACKGROUND_IMAGE}
+            alt={`${SITE_NAME}  exterior`}
             fill
             className="object-cover"
             priority
           />
-          {/* Match About page hero: dark base, readable headline, booking bar still legible */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f35]/88 via-[#0d1f35]/45 to-[#0d1f35]/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2d1810]/96 via-[#332018]/62 to-[#16110e]/52" />
         </div>
 
         {/* Hero content */}
@@ -115,26 +116,26 @@ export function Hero() {
             >
               {/* Badge (hidden on small screens to reduce hero clutter) */}
               <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#7ecfdd] animate-pulse" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
                 Premier Guest House · Louis Trichardt, Limpopo
               </div>
 
-              {/* Heading — always exactly two lines (line break never inside a phrase) */}
-              <h1 className="font-serif font-medium text-white leading-[1.08] drop-shadow-2xl text-[clamp(1.75rem,7vw,5.5rem)] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-                <span className="block whitespace-nowrap">Refined Living</span>
-                <span className="block whitespace-nowrap text-[#7ecfdd]">in Louis Trichardt</span>
-              </h1>
-
-              {/* Sub-heading */}
-              <p className="mt-7 text-lg sm:text-xl text-white/80 max-w-xl leading-relaxed font-light">
-                Elegantly decorated rooms with premium finishes{"  "}tailored for business and leisure guests. Bed &amp; Breakfast, pool &amp; braai included.
+              <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent drop-shadow-lg mb-4 leading-tight">
+                {SITE_TAGLINE}
               </p>
 
-              {/* CTA */}
+              <h1 className="font-serif font-semibold text-white leading-[1.06] drop-shadow-2xl text-[clamp(1.85rem,6.5vw,4.25rem)] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+                <span className="block whitespace-nowrap">{SITE_NAME}</span>
+              </h1>
+
+              <p className="mt-7 text-lg sm:text-xl text-white/85 max-w-xl leading-relaxed font-light">
+                Thoughtfully appointed rooms with warm African hospitalityideal for business and leisure. Bed &amp; Breakfast, pool &amp; braai area on site.
+              </p>
+
               <div className="mt-10 flex flex-wrap gap-3">
                 <a
                   href="#rooms"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-medium text-sm tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 bg-white text-[#1a2e4a] hover:bg-transparent hover:border-white/70 hover:text-white border-2 border-white hover:-translate-y-0.5 shadow-lg hover:shadow-none"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-medium text-sm tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 bg-white text-primary hover:bg-transparent hover:border-white/70 hover:text-white border-2 border-white hover:-translate-y-0.5 shadow-lg hover:shadow-none"
                 >
                   Explore Rooms
                 </a>
@@ -150,12 +151,11 @@ export function Hero() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="bg-white/95 backdrop-blur-xl rounded-t-2xl shadow-[0_-8px_40px_rgba(0,0,0,0.18)] overflow-hidden">
-            {/* Top accent stripe */}
-            <div className="h-1 w-full bg-gradient-to-r from-[#1a2e4a] via-[#4aabba] to-[#7ecfdd]" />
+          <div className="bg-white/95 backdrop-blur-xl rounded-t-3xl shadow-[0_-8px_40px_rgba(45,27,21,0.18)] overflow-hidden ring-1 ring-black/5">
+            <div className="h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-accent" />
 
             {/* Fields row */}
-            <div className="flex flex-col lg:flex-row lg:items-stretch divide-y lg:divide-y-0 lg:divide-x divide-[#e8e4df]">
+            <div className="flex flex-col lg:flex-row lg:items-stretch divide-y lg:divide-y-0 lg:divide-x divide-border">
 
               {/* ── Check-in ── */}
               <Popover>
@@ -163,20 +163,20 @@ export function Hero() {
                   <button
                     type="button"
                     disabled={!checkIn}
-                    className="group flex-1 flex items-center gap-4 px-6 py-5 text-left hover:bg-[#f0fafb] active:bg-[#f0fafb] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4aabba] focus-visible:ring-inset disabled:opacity-50 disabled:pointer-events-none"
+                    className="group flex-1 flex items-center gap-4 px-6 py-5 text-left hover:bg-secondary/5 active:bg-secondary/5 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset disabled:opacity-50 disabled:pointer-events-none"
                     aria-label={
                       checkIn
                         ? `Check-in date: ${formatDisplayDate(checkIn)}, click to change`
                         : "Check-in date, loading"
                     }
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#4aabba]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#4aabba]/20 group-active:bg-[#4aabba]/20 transition-colors" aria-hidden="true">
-                      <CalendarIcon className="h-5 w-5 text-[#4aabba]" />
+                    <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 group-active:bg-secondary/20 transition-colors" aria-hidden="true">
+                      <CalendarIcon className="h-5 w-5 text-secondary" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#1a6b75] mb-0.5">Check-in</p>
-                      <p className="text-xl font-bold text-[#1a2e4a] leading-none tabular-nums min-h-[1.75rem]">
-                        {checkIn ? formatDisplayDate(checkIn) : "—"}
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary mb-0.5">Check-in</p>
+                      <p className="text-xl font-bold text-primary leading-none tabular-nums min-h-[1.75rem]">
+                        {checkIn ? formatDisplayDate(checkIn) : ""}
                       </p>
                     </div>
                   </button>
@@ -193,13 +193,13 @@ export function Hero() {
               </Popover>
 
               {/* ── Nights indicator (desktop only) ── */}
-              <div className="hidden lg:flex items-center justify-center px-5 bg-[#f7f5f2] min-w-[100px]" aria-label={`${nights} night${nights !== 1 ? "s" : ""}`}>
+              <div className="hidden lg:flex items-center justify-center px-5 bg-muted min-w-[100px]" aria-label={`${nights} night${nights !== 1 ? "s" : ""}`}>
                 <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 text-[#4aabba] mb-1">
+                  <div className="flex items-center justify-center gap-1 text-secondary mb-1">
                     <Moon className="h-3.5 w-3.5" aria-hidden="true" />
                   </div>
-                  <p className="text-2xl font-bold text-[#1a2e4a] leading-none" aria-hidden="true">{nights}</p>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#5c6a7a] mt-0.5" aria-hidden="true">
+                  <p className="text-2xl font-bold text-primary leading-none" aria-hidden="true">{nights}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mt-0.5" aria-hidden="true">
                     {nights === 1 ? "night" : "nights"}
                   </p>
                 </div>
@@ -211,20 +211,20 @@ export function Hero() {
                   <button
                     type="button"
                     disabled={!checkOut}
-                    className="group flex-1 flex items-center gap-4 px-6 py-5 text-left hover:bg-[#f0fafb] active:bg-[#f0fafb] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4aabba] focus-visible:ring-inset disabled:opacity-50 disabled:pointer-events-none"
+                    className="group flex-1 flex items-center gap-4 px-6 py-5 text-left hover:bg-secondary/5 active:bg-secondary/5 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset disabled:opacity-50 disabled:pointer-events-none"
                     aria-label={
                       checkOut
                         ? `Check-out date: ${formatDisplayDate(checkOut)}, click to change`
                         : "Check-out date, loading"
                     }
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#4aabba]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#4aabba]/20 group-active:bg-[#4aabba]/20 transition-colors" aria-hidden="true">
-                      <CalendarIcon className="h-5 w-5 text-[#4aabba]" />
+                    <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 group-active:bg-secondary/20 transition-colors" aria-hidden="true">
+                      <CalendarIcon className="h-5 w-5 text-secondary" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#1a6b75] mb-0.5">Check-out</p>
-                      <p className="text-xl font-bold text-[#1a2e4a] leading-none tabular-nums min-h-[1.75rem]">
-                        {checkOut ? formatDisplayDate(checkOut) : "—"}
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary mb-0.5">Check-out</p>
+                      <p className="text-xl font-bold text-primary leading-none tabular-nums min-h-[1.75rem]">
+                        {checkOut ? formatDisplayDate(checkOut) : ""}
                       </p>
                     </div>
                   </button>
@@ -242,30 +242,30 @@ export function Hero() {
 
               {/* ── Adults counter ── */}
               <div className="flex items-center gap-4 px-6 py-5 lg:min-w-[200px]">
-                <div className="w-10 h-10 rounded-xl bg-[#4aabba]/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                  <svg className="h-5 w-5 text-[#4aabba]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <svg className="h-5 w-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <p id="adults-label" className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#1a6b75] mb-1">Adults</p>
+                  <p id="adults-label" className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary mb-1">Adults</p>
                   <div role="group" aria-labelledby="adults-label" className="flex items-center gap-3">
                     <button
                       type="button"
                       onClick={() => setAdults((n) => Math.max(1, n - 1))}
-                      className="w-7 h-7 rounded-full border-2 border-[#4aabba] flex items-center justify-center text-[#4aabba] hover:bg-[#4aabba] hover:text-white active:bg-[#4aabba] active:text-white transition-all duration-200 disabled:opacity-30"
+                      className="w-7 h-7 rounded-full border-2 border-secondary flex items-center justify-center text-secondary hover:bg-secondary hover:text-white active:bg-secondary active:text-white transition-all duration-200 disabled:opacity-30"
                       disabled={adults <= 1}
                       aria-label={`Remove adult, currently ${adults}`}
                     >
                       <Minus className="h-3.5 w-3.5" aria-hidden="true" />
                     </button>
-                    <span aria-live="polite" aria-atomic="true" className="text-xl font-bold text-[#1a2e4a] w-6 text-center tabular-nums">
+                    <span aria-live="polite" aria-atomic="true" className="text-xl font-bold text-primary w-6 text-center tabular-nums">
                       {adults}
                     </span>
                     <button
                       type="button"
                       onClick={() => setAdults((n) => Math.min(6, n + 1))}
-                      className="w-7 h-7 rounded-full border-2 border-[#4aabba] flex items-center justify-center text-[#4aabba] hover:bg-[#4aabba] hover:text-white active:bg-[#4aabba] active:text-white transition-all duration-200 disabled:opacity-30"
+                      className="w-7 h-7 rounded-full border-2 border-secondary flex items-center justify-center text-secondary hover:bg-secondary hover:text-white active:bg-secondary active:text-white transition-all duration-200 disabled:opacity-30"
                       disabled={adults >= 6}
                       aria-label={`Add adult, currently ${adults}`}
                     >
@@ -286,12 +286,12 @@ export function Hero() {
                     flex items-center justify-center gap-3
                     px-8 py-4
                     rounded-xl
-                    bg-gradient-to-r from-[#1a2e4a] to-[#243d63]
-                    hover:from-[#4aabba] hover:to-[#7ecfdd]
-                    active:from-[#4aabba] active:to-[#7ecfdd]
+                    bg-gradient-to-r from-primary to-[#5d4037]
+                    hover:from-secondary hover:to-accent
+                    active:from-secondary active:to-accent
                     disabled:opacity-60 disabled:cursor-not-allowed
                     text-white font-bold text-sm tracking-wide uppercase
-                    shadow-lg hover:shadow-[#4aabba]/40 active:shadow-[#4aabba]/40
+                    shadow-lg hover:shadow-secondary/40 active:shadow-secondary/40
                     transition-all duration-300 hover:-translate-y-0.5 active:-translate-y-0.5
                     whitespace-nowrap
                   "
@@ -304,11 +304,11 @@ export function Hero() {
             </div>
 
             {/* Bottom info strip */}
-            <div className="px-6 py-2.5 bg-[#f7f5f2] border-t border-[#e8e4df] flex items-center justify-between flex-wrap gap-2">
-              <p className="text-[11px] text-[#5c6a7a]">
+            <div className="px-6 py-2.5 bg-muted border-t border-border flex items-center justify-between flex-wrap gap-2">
+              <p className="text-[11px] text-muted-foreground">
                 Secure booking · Bed &amp; Breakfast included
               </p>
-              <p className="text-[11px] font-semibold text-[#1a6b75]">
+              <p className="text-[11px] font-semibold text-secondary">
                 {nights} night{nights !== 1 ? "s" : ""} · {adults} adult{adults !== 1 ? "s" : ""}
               </p>
             </div>

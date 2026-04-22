@@ -17,7 +17,8 @@ import { INDIVIDUAL_ROOMS } from "@/lib/rooms-data"
 import { AnimatedSection } from "./animated-section"
 import { WaveDivider } from "./wave-divider"
 
-const CDN = "https://d1zyr4xmqw3mni.cloudfront.net/image/1600/gallery/39595"
+import { PROPERTY_EXTERIOR_PHOTOS, QUEEN_ROOM_PHOTOS, TWIN_ROOM_PHOTOS } from "@/lib/lodge-media"
+import { SITE_NAME } from "@/lib/site-config"
 
 type GalleryImage = { src: string; alt: string; category: string }
 
@@ -28,60 +29,25 @@ function isRasterWebImage(src: string) {
   return true
 }
 
-/* Rooms first; Property, Pool & Braai, Common Areas last (grid + filter order). */
 const ALL_IMAGES: GalleryImage[] = [
-  /* King Room */
-  { src: `${CDN}/1199061.jpg`,  alt: "King Room – bed",           category: "King Room" },
-  { src: `${CDN}/1199068.jpg`,  alt: "King Room – overview",      category: "King Room" },
-  { src: `${CDN}/1199060.jpg`,  alt: "King Room – seating",       category: "King Room" },
-  { src: `${CDN}/1199075.jpg`,  alt: "King Room – bathroom",      category: "King Room" },
-  /* Twin Room */
-  { src: `${CDN}/1198862.jpg`,  alt: "Twin Room – beds",          category: "Twin Room" },
-  { src: `${CDN}/1198864.jpg`,  alt: "Twin Room – overview",      category: "Twin Room" },
-  { src: `${CDN}/1198871.jpg`,  alt: "Twin Room – seating",       category: "Twin Room" },
-  { src: `${CDN}/1198884.jpg`,  alt: "Twin Room – shower",        category: "Twin Room" },
-  /* Queen Room */
-  { src: `${CDN}/1199090.jpg`,  alt: "Queen Room – bed",          category: "Queen Room" },
-  { src: `${CDN}/1199095.jpg`,  alt: "Queen Room – overview",     category: "Queen Room" },
-  { src: `${CDN}/1199094.jpg`,  alt: "Queen Room – seating",      category: "Queen Room" },
-  { src: `${CDN}/1199107.jpg`,  alt: "Queen Room – bathroom",     category: "Queen Room" },
-  /* Deluxe Room */
-  { src: `${CDN}/1198814.jpg`,  alt: "Deluxe Room – overview",    category: "Deluxe Room" },
-  { src: `${CDN}/1198816.jpg`,  alt: "Deluxe Room – bed",         category: "Deluxe Room" },
-  { src: `${CDN}/1198823.jpg`,  alt: "Deluxe Room – patio",       category: "Deluxe Room" },
-  { src: `${CDN}/1198821.jpg`,  alt: "Deluxe Room – seating",     category: "Deluxe Room" },
-  /* Executive Room */
-  { src: `${CDN}/1199033.jpg`,  alt: "Executive Room – bed",      category: "Executive Room" },
-  { src: `${CDN}/1199036.jpg`,  alt: "Executive Room – overview", category: "Executive Room" },
-  { src: `${CDN}/1199043.jpg`,  alt: "Executive Room – seating",  category: "Executive Room" },
-  { src: `${CDN}/1199088.jpg`,  alt: "Executive Room – shower",   category: "Executive Room" },
-  /* Property  last groups */
-  { src: `${CDN}/1198903.jpg`,  alt: "Liquid Blue exterior",      category: "Property" },
-  { src: `${CDN}/1199089.jpg`,  alt: "Guest house entrance",      category: "Property" },
-  { src: `${CDN}/1199024.jpg`,  alt: "Front facade",              category: "Property" },
-  /* Pool & Braai */
-  { src: `${CDN}/1198905.jpg`,  alt: "Swimming pool",             category: "Pool & Braai" },
-  { src: `${CDN}/1198906.jpg`,  alt: "Pool area",                 category: "Pool & Braai" },
-  { src: `${CDN}/1198907.jpg`,  alt: "Braai / BBQ area",          category: "Pool & Braai" },
-  { src: `${CDN}/1198908.jpg`,  alt: "Pool – afternoon",          category: "Pool & Braai" },
-  /* Common Areas */
-  { src: `${CDN}/1199020.jpg`,  alt: "Lounge",                    category: "Common Areas" },
-  { src: `${CDN}/1199018.jpg`,  alt: "Living room",               category: "Common Areas" },
-  { src: `${CDN}/1198917.jpg`,  alt: "Sitting area",              category: "Common Areas" },
-  { src: `${CDN}/1199034.jpg`,  alt: "Breakfast area",            category: "Common Areas" },
-  { src: `${CDN}/1199039.jpg`,  alt: "Dining area",               category: "Common Areas" },
+  ...QUEEN_ROOM_PHOTOS.map((src, i) => ({
+    src,
+    alt: `Queen room – photo ${i + 1}`,
+    category: "Queen room",
+  })),
+  ...TWIN_ROOM_PHOTOS.map((src, i) => ({
+    src,
+    alt: `Twin room – photo ${i + 1}`,
+    category: "Twin room",
+  })),
+  ...PROPERTY_EXTERIOR_PHOTOS.map((src, i) => ({
+    src,
+    alt: i === 0 ? `${SITE_NAME} – grounds` : `${SITE_NAME} – exterior ${i + 1}`,
+    category: "Property",
+  })),
 ].filter((img) => isRasterWebImage(img.src))
 
-const CATEGORY_FILTER_ORDER = [
-  "King Room",
-  "Twin Room",
-  "Queen Room",
-  "Deluxe Room",
-  "Executive Room",
-  "Property",
-  "Pool & Braai",
-  "Common Areas",
-] as const
+const CATEGORY_FILTER_ORDER = ["Queen room", "Twin room", "Property"] as const
 
 const _present = new Set(ALL_IMAGES.map((i) => i.category))
 const POPULAR_TYPE_NAMES = new Set(
@@ -95,7 +61,7 @@ const CATEGORIES = ["All", ...CATEGORY_CHIPS_ORDER]
 
 /**
  * Desktop mosaic: repeating 6-tile bento on md (6 cols) + lg (12 cols).
- * Auto-placement preserves photo order — hero band, then triptych row.
+ * Auto-placement preserves photo order  hero band, then triptych row.
  */
 const MOSAIC_BAND = [
   "md:col-span-6 lg:col-span-7 md:row-span-2 min-h-[210px] md:min-h-[240px] lg:min-h-[min(32vw,340px)]",
@@ -189,7 +155,7 @@ function GalleryItem({
       />
 
       {/* Dark overlay on hover */}
-      <div className="absolute inset-0 bg-[#1a2e4a]/0 group-hover:bg-[#1a2e4a]/40 transition-all duration-500" />
+      <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all duration-500" />
 
       {/* Zoom icon */}
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400">
@@ -201,7 +167,7 @@ function GalleryItem({
       {/* Caption */}
       <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-400">
         <p className="text-white text-sm font-semibold truncate">{image.alt}</p>
-        <span className="mt-1.5 inline-flex w-fit max-w-full items-center rounded-md bg-white px-2 py-1 text-left text-[10px] font-bold uppercase tracking-wider text-[#1a2e4a] shadow-md ring-1 ring-black/5">
+        <span className="mt-1.5 inline-flex w-fit max-w-full items-center rounded-md bg-white px-2 py-1 text-left text-[10px] font-bold uppercase tracking-wider text-primary shadow-md ring-1 ring-black/5">
           <span className="truncate">{image.category}</span>
         </span>
       </div>
@@ -270,23 +236,23 @@ export function Gallery() {
     >
       <WaveDivider flip color="fill-[#faf9f7]" className="z-10" />
 
-      <div className="absolute top-1/3 right-0 w-80 h-80 bg-[#4aabba]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-[#7ecfdd]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <AnimatedSection className="text-center max-w-2xl mx-auto mb-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#1a2e4a]/8 text-[#1a2e4a] font-semibold tracking-wider uppercase text-xs">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-semibold tracking-wider uppercase text-xs">
             Photo Gallery
           </span>
-          <h2 className="mt-4 font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-[#1a2e4a]">
+          <h2 className="mt-4 font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-primary">
             Explore Our Space
           </h2>
           <p className="mt-4 text-[#5c6a7a] leading-relaxed">
             <span className="md:hidden">Swipe through our rooms, pool, and shared spaces. Tap a photo for full screen.</span>
             <span className="hidden md:inline">
-              Take a virtual tour of Liquid Blue  rooms, common areas, and surroundings. Click any photo to browse the full carousel.
+              Take a virtual tour of {SITE_NAME}rooms, common areas, and surroundings. Click any photo to browse the full carousel.
             </span>
           </p>
         </AnimatedSection>
@@ -301,8 +267,8 @@ export function Gallery() {
               aria-pressed={activeCategory === cat}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeCategory === cat
-                  ? "bg-[#1a2e4a] text-white shadow-md"
-                  : "bg-white text-[#1a2e4a] border border-[#e5e1da] hover:border-[#1a2e4a] hover:bg-[#1a2e4a]/5"
+                  ? "bg-primary text-white shadow-md"
+                  : "bg-white text-primary border border-border hover:border-primary hover:bg-primary/5"
               }`}
             >
               {cat}
@@ -310,7 +276,7 @@ export function Gallery() {
           ))}
         </AnimatedSection>
 
-        {/* Mobile: full-bleed carousel — one image per viewport width */}
+        {/* Mobile: full-bleed carousel  one image per viewport width */}
         <div className="md:hidden relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
           <Carousel
             key={activeCategory}
@@ -329,22 +295,22 @@ export function Gallery() {
             </CarouselContent>
             <CarouselPrevious
               variant="secondary"
-              className="left-2 top-1/2 z-10 size-10 -translate-y-1/2 border-0 bg-white/90 text-[#1a2e4a] shadow-sm hover:bg-white disabled:opacity-30"
+              className="left-2 top-1/2 z-10 size-10 -translate-y-1/2 border-0 bg-white/90 text-primary shadow-sm hover:bg-white disabled:opacity-30"
             />
             <CarouselNext
               variant="secondary"
-              className="right-2 top-1/2 z-10 size-10 -translate-y-1/2 border-0 bg-white/90 text-[#1a2e4a] shadow-sm hover:bg-white disabled:opacity-30"
+              className="right-2 top-1/2 z-10 size-10 -translate-y-1/2 border-0 bg-white/90 text-primary shadow-sm hover:bg-white disabled:opacity-30"
             />
           </Carousel>
           <div className="mt-4 px-2 text-center" aria-live="polite">
-            <p className="text-sm font-medium text-[#1a2e4a] truncate">
+            <p className="text-sm font-medium text-primary truncate">
               {filtered[mobileSlide]?.alt ?? ""}
             </p>
             <p className="mt-1 text-xs text-[#5c6a7a]">
-              <span className="inline-flex items-center rounded-md bg-[#1a2e4a]/8 px-2 py-0.5 font-bold uppercase tracking-wider text-[#1a2e4a]">
+              <span className="inline-flex items-center rounded-md bg-primary/8 px-2 py-0.5 font-bold uppercase tracking-wider text-primary">
                 {filtered[mobileSlide]?.category}
               </span>
-              <span className="mx-2 text-[#e5e1da]" aria-hidden="true">
+              <span className="mx-2 text-border" aria-hidden="true">
                 |
               </span>
               {mobileSlide + 1} / {filtered.length}
@@ -383,7 +349,7 @@ export function Gallery() {
 
       <WaveDivider color="fill-[#faf9f7]" />
 
-      {/* ─── Lightbox — full-viewport; overrides default centered modal positioning */}
+      {/* ─── Lightbox  full-viewport; overrides default centered modal positioning */}
       <Dialog open={lightboxIndex !== null} onOpenChange={(open) => { if (!open) close() }}>
         <DialogContent
           showCloseButton={false}
@@ -417,7 +383,7 @@ export function Gallery() {
               </div>
             )}
 
-            {/* Image — min-h-0 so flex + fill Image lays out correctly for every category length */}
+            {/* Image  min-h-0 so flex + fill Image lays out correctly for every category length */}
             <div className="relative min-h-0 flex-1">
               {current ? (
                 <Image
@@ -458,7 +424,7 @@ export function Gallery() {
               <div className="flex flex-shrink-0 flex-col gap-1 border-t border-white/10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4">
                 <div className="min-w-0 pr-8 sm:pr-0">
                   <p className="font-semibold text-white">{current.alt}</p>
-                  <span className="mt-2 inline-flex w-fit max-w-full items-center rounded-md bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#1a2e4a] shadow-md ring-1 ring-black/5">
+                  <span className="mt-2 inline-flex w-fit max-w-full items-center rounded-md bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary shadow-md ring-1 ring-black/5">
                     <span className="truncate">{current.category}</span>
                   </span>
                 </div>
@@ -479,7 +445,7 @@ export function Gallery() {
                     className={cn(
                       "relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all sm:h-14 sm:w-14",
                       i === lightboxIndex
-                        ? "scale-105 border-[#4aabba] shadow-lg shadow-[#4aabba]/40"
+                        ? "scale-105 border-secondary shadow-lg shadow-secondary/40"
                         : "border-white/20 opacity-60 hover:opacity-100 hover:border-white/50",
                     )}
                   >

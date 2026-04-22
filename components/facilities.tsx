@@ -67,10 +67,10 @@ export function Facilities() {
 
         {/* Header */}
         <AnimatedSection className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block px-4 py-2 rounded-full bg-[#1a2e4a]/8 text-[#1a2e4a] font-bold tracking-wider uppercase text-xs">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs">
             Our Facilities
           </span>
-          <h2 id="facilities-heading" className="mt-5 font-serif text-4xl sm:text-5xl font-medium text-[#1a2e4a] leading-tight">
+          <h2 id="facilities-heading" className="mt-5 font-serif text-4xl sm:text-5xl font-medium text-primary leading-tight">
             Common Areas &amp; Spaces
           </h2>
           <p className="mt-5 text-lg text-[#5c6a7a] leading-relaxed">
@@ -94,14 +94,14 @@ export function Facilities() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e4a]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400">
                   <span className="text-white text-sm font-semibold">{item.label}</span>
                 </div>
                 {/* Always-visible subtle label for larger cards */}
                 {i === 0 && (
                   <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 text-white text-xs font-bold uppercase tracking-widest">
-                    Liquid Blue
+                    Muofhe Graceland Lodge
                   </div>
                 )}
               </div>
@@ -112,14 +112,14 @@ export function Facilities() {
         {/* Feature chips */}
         <AnimatedSection delay={100}>
           <div className="border-t border-[#e8e4df] pt-12">
-            <p className="text-center text-xs font-bold uppercase tracking-widest text-[#1a2e4a] mb-8">
+            <p className="text-center text-xs font-bold uppercase tracking-widest text-primary mb-8">
               Included in every stay
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {FEATURE_ITEMS.map((f) => (
                 <div
                   key={f.label}
-                  className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#faf9f7] border border-[#e8e4df] text-[#1a2e4a] text-sm font-medium hover:border-[#4aabba] hover:bg-[#4aabba]/5 transition-colors duration-200"
+                  className="flex items-center gap-2 px-5 py-3 rounded-full bg-background border border-border text-primary text-sm font-medium hover:border-secondary hover:bg-secondary/5 transition-colors duration-200"
                 >
                   <span aria-hidden="true">{f.emoji}</span>
                   {f.label}

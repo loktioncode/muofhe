@@ -7,22 +7,23 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { AnimatedSection } from "./animated-section"
+import { SITE_EMAIL, SITE_NAME, SITE_PHONE_DISPLAY } from "@/lib/site-config"
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["Liquid Blue Guest House", "Limpopo, South Africa"],
+    details: [SITE_NAME, "157 Forestry Rd", "Louis Trichardt, Limpopo"],
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["+27 68 240 4462"],
+    details: [SITE_PHONE_DISPLAY],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["liquidblueltt@gmail.com"],
+    details: [SITE_EMAIL],
   },
   {
     icon: Clock,
@@ -65,7 +66,7 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#1a2e4a]/8 text-[#1a2e4a] font-semibold tracking-wider uppercase text-xs">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-semibold tracking-wider uppercase text-xs">
             Get In Touch
           </span>
           <h2 className="mt-4 font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-foreground text-balance">
@@ -138,7 +139,7 @@ export function Contact() {
                       required
                       aria-required="true"
                       autoComplete="name"
-                      className="h-12 border-2 transition-all duration-300 focus:border-[#1a2e4a]"
+                      className="h-12 border-2 transition-all duration-300 focus:border-primary"
                     />
                   </Field>
 
@@ -156,7 +157,7 @@ export function Contact() {
                       required
                       aria-required="true"
                       autoComplete="email"
-                      className="h-12 border-2 transition-all duration-300 focus:border-[#1a2e4a]"
+                      className="h-12 border-2 transition-all duration-300 focus:border-primary"
                     />
                   </Field>
 
@@ -170,7 +171,7 @@ export function Contact() {
                       onChange={handleChange}
                       placeholder="+27 68 240 4462"
                       autoComplete="tel"
-                      className="h-12 border-2 transition-all duration-300 focus:border-[#1a2e4a]"
+                      className="h-12 border-2 transition-all duration-300 focus:border-primary"
                     />
                   </Field>
 
@@ -187,7 +188,7 @@ export function Contact() {
                       rows={4}
                       required
                       aria-required="true"
-                      className="border-2 transition-all duration-300 focus:border-[#1a2e4a] resize-none"
+                      className="border-2 transition-all duration-300 focus:border-primary resize-none"
                     />
                   </Field>
 

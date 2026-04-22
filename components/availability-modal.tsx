@@ -18,7 +18,14 @@ import {
   Users,
 } from "lucide-react"
 import { format } from "date-fns"
-import { TYPE_META, compareAvailRoomTypesPopularFirst } from "@/lib/rooms-data"
+import {
+  LODGE_RTID_QUEEN,
+  LODGE_RTID_TWIN,
+  TYPE_META,
+  compareAvailRoomTypesPopularFirst,
+} from "@/lib/rooms-data"
+import { QUEEN_ROOM_PHOTOS, TWIN_ROOM_PHOTOS } from "@/lib/lodge-media"
+import { nightsbridgeBookUrl, shortenRoomTypeName } from "@/lib/site-config"
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 export interface AvailRoomAvailability {
@@ -53,18 +60,13 @@ interface Props {
   error: string | null
 }
 
-const BBID = 39595
-const NBID = 377
-
-const CDN = "https://d1zyr4xmqw3mni.cloudfront.net/image/500/gallery/39595"
-
-// Representative hero image per room type
 const TYPE_HERO: Record<number, string> = {
-  1: `${CDN}/1199061.jpg`,
-  2: `${CDN}/1198862.jpg`,
-  3: `${CDN}/1199090.jpg`,
-  4: `${CDN}/1199033.jpg`,
-  5: `${CDN}/1198811.jpg`,
+  [LODGE_RTID_TWIN]: TWIN_ROOM_PHOTOS[0],
+  [LODGE_RTID_QUEEN]: QUEEN_ROOM_PHOTOS[0],
+}
+
+function heroImageFor(rtid: number) {
+  return TYPE_HERO[rtid] ?? TWIN_ROOM_PHOTOS[0]
 }
 
 const KEY_AMENITIES = [
@@ -80,7 +82,7 @@ function formatRate(rate: number) {
 }
 
 function buildBookingUrl(rtid: number, startdate: string, nights: number) {
-  return `https://book.nightsbridge.com/${BBID}?nbid=${NBID}&startdate=${startdate}&nights=${nights}&bbrtid=${rtid}`
+  return nightsbridgeBookUrl({ startdate, nights, bbrtid: rtid })
 }
 
 function isAvailableForEntireStay(room: AvailRoom): boolean {
@@ -95,27 +97,20 @@ function RoomCard({ room, startdate, nights }: { room: AvailRoom; startdate: str
   const rate     = avail?.roomrate
   const isOpen   = isAvailableForEntireStay(room)
   const bookUrl  = buildBookingUrl(room.rtid, startdate, nights)
-  const label    = meta?.label ?? room.rtname.replace("Liquid Blue - ", "")
+  const label    = meta?.label ?? shortenRoomTypeName(room.rtname)
 
   return (
-    <article className="group bg-white rounded-2xl overflow-hidden border border-[#e8e4df] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+    <article className="group bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
       {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-[#e8e4df]">
-        {TYPE_HERO[room.rtid] ? (
+      <div className="relative h-48 overflow-hidden bg-muted">
           <Image
-            src={TYPE_HERO[room.rtid]}
+            src={heroImageFor(room.rtid)}
             alt={label}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
-            unoptimized
           />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-[#a0b0c0]">
-            <BedDouble className="h-12 w-12" />
-          </div>
-        )}
         {/* Type badge */}
-        <div className="absolute top-3 left-3 max-w-[min(100%,calc(100%-5.5rem))] truncate rounded-md bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#1a2e4a] shadow-md ring-1 ring-black/5">
+        <div className="absolute top-3 left-3 max-w-[min(100%,calc(100%-5.5rem))] truncate rounded-md bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary shadow-md ring-1 ring-black/5">
           {label}
         </div>
         {/* Availability badge */}
@@ -129,16 +124,16 @@ function RoomCard({ room, startdate, nights }: { room: AvailRoom; startdate: str
       <div className="p-5 flex flex-col flex-1 gap-4">
         {/* Title + specs */}
         <div>
-          <h3 className="text-[#1a2e4a] font-bold text-lg leading-tight mb-1">{label}</h3>
+          <h3 className="text-primary font-bold text-lg leading-tight mb-1">{label}</h3>
           {meta && (
-            <div className="flex items-center gap-3 text-xs text-[#5c6a7a] flex-wrap">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
               <span className="flex items-center gap-1">
                 <BedDouble className="h-3.5 w-3.5" aria-hidden="true" />
                 {meta.bedType}
               </span>
-              <span className="text-[#c0d0df]">·</span>
+              <span className="text-border">·</span>
               <span>{meta.enSuite}</span>
-              <span className="text-[#c0d0df]">·</span>
+              <span className="text-border">·</span>
               <span className="flex items-center gap-1">
                 <Users className="h-3.5 w-3.5" aria-hidden="true" />
                 Up to {room.maxoccupancy}
@@ -148,14 +143,14 @@ function RoomCard({ room, startdate, nights }: { room: AvailRoom; startdate: str
         </div>
 
         {/* Description */}
-        <p className="text-sm text-[#5c6a7a] leading-relaxed line-clamp-3 flex-1">
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-1">
           {room.description}
         </p>
 
         {/* Key amenities */}
         <ul className="flex flex-wrap gap-2" aria-label="Key amenities">
           {KEY_AMENITIES.map(({ icon: Icon, label: aLabel }) => (
-            <li key={aLabel} className="flex items-center gap-1.5 bg-[#f0fafb] text-[#1a6b75] px-2.5 py-1 rounded-full text-[10px] font-semibold">
+            <li key={aLabel} className="flex items-center gap-1.5 bg-secondary/10 text-secondary px-2.5 py-1 rounded-full text-[10px] font-semibold">
               <Icon className="h-3 w-3" aria-hidden="true" />
               {aLabel}
             </li>
@@ -163,22 +158,22 @@ function RoomCard({ room, startdate, nights }: { room: AvailRoom; startdate: str
         </ul>
 
         {/* Rate + CTA */}
-        <div className="flex items-center justify-between pt-3 border-t border-[#f0f4f8] gap-3 flex-wrap">
+        <div className="flex items-center justify-between pt-3 border-t border-muted gap-3 flex-wrap">
           {rate != null ? (
             <div>
-              <p className="text-[10px] text-[#8a9ab0] uppercase tracking-widest font-semibold">Per room / night · B&amp;B</p>
-              <p className="text-2xl font-bold text-[#1a2e4a] leading-none mt-0.5">
+              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">Per room / night · B&amp;B</p>
+              <p className="text-2xl font-bold text-primary leading-none mt-0.5">
                 {formatRate(rate)}
               </p>
             </div>
           ) : (
-            <p className="text-sm text-[#8a9ab0] italic">Rate on request</p>
+            <p className="text-sm text-muted-foreground italic">Rate on request</p>
           )}
           <a
             href={bookUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#1a2e4a] to-[#243d63] hover:from-[#4aabba] hover:to-[#7ecfdd] text-white font-bold text-sm tracking-wide uppercase shadow-md hover:shadow-[#4aabba]/40 transition-all duration-300 hover:-translate-y-0.5"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-primary to-[#5d4037] hover:from-secondary hover:to-accent text-white font-bold text-sm tracking-wide uppercase shadow-md hover:shadow-secondary/40 transition-all duration-300 hover:-translate-y-0.5"
             aria-label={`Book ${label}${rate != null ? `, ${formatRate(rate)} per night` : ""}`}
           >
             Book
@@ -238,7 +233,7 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-[#0d1f35]/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-primary/75 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -248,7 +243,7 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
         ref={dialogRef}
         className="
           relative z-10 w-full sm:max-w-5xl
-          bg-[#f7f5f2]
+          bg-muted
           rounded-t-3xl sm:rounded-3xl
           shadow-[0_24px_80px_rgba(0,0,0,0.35)]
           flex flex-col
@@ -258,18 +253,18 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
         "
       >
         {/* Header */}
-        <div className="flex items-start justify-between px-6 pt-6 pb-5 border-b border-[#e8e4df] bg-white">
+        <div className="flex items-start justify-between px-6 pt-6 pb-5 border-b border-border bg-card">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <CalendarCheck className="h-5 w-5 text-[#4aabba]" aria-hidden="true" />
-              <h2 className="text-xl font-bold text-[#1a2e4a]">Available Rooms</h2>
+              <CalendarCheck className="h-5 w-5 text-secondary" aria-hidden="true" />
+              <h2 className="text-xl font-bold text-primary">Available Rooms</h2>
             </div>
-            <p className="text-sm text-[#5c6a7a]">
-              <span className="font-semibold text-[#1a2e4a]">
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-primary">
                 {format(checkIn, "d MMM")} – {format(checkOut, "d MMM yyyy")}
               </span>
               {" · "}
-              <Moon className="inline h-3.5 w-3.5 text-[#4aabba] -mt-0.5" aria-hidden="true" />{" "}
+              <Moon className="inline h-3.5 w-3.5 text-secondary -mt-0.5" aria-hidden="true" />{" "}
               <span className="font-semibold">{nights}</span> night{nights !== 1 ? "s" : ""}
               {" · "}
               <Users className="inline h-3.5 w-3.5 -mt-0.5" aria-hidden="true" />{" "}
@@ -280,7 +275,7 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
             ref={closeRef}
             type="button"
             onClick={onClose}
-            className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center bg-[#f0f4f8] hover:bg-[#e8e4df] text-[#5c6a7a] hover:text-[#1a2e4a] transition-colors"
+            className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center bg-muted hover:bg-border text-muted-foreground hover:text-primary transition-colors"
             aria-label="Close availability panel"
           >
             <X className="h-4 w-4" aria-hidden="true" />
@@ -292,8 +287,8 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
           {/* Loading */}
           {loading && (
             <div className="flex flex-col items-center justify-center py-20 gap-4" role="status" aria-live="polite">
-              <Loader2 className="h-10 w-10 text-[#4aabba] animate-spin" aria-hidden="true" />
-              <p className="text-[#5c6a7a] font-medium">Checking room availability…</p>
+              <Loader2 className="h-10 w-10 text-secondary animate-spin" aria-hidden="true" />
+              <p className="text-muted-foreground font-medium">Checking room availability…</p>
             </div>
           )}
 
@@ -302,15 +297,15 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
             <div className="flex flex-col items-center justify-center py-20 gap-4 text-center" role="alert">
               <AlertCircle className="h-10 w-10 text-rose-400" aria-hidden="true" />
               <div>
-                <p className="text-[#1a2e4a] font-bold text-lg mb-1">Couldn't load availability</p>
-                <p className="text-[#5c6a7a] text-sm max-w-sm">{error}</p>
-                <p className="text-[#5c6a7a] text-sm mt-3">
+                <p className="text-primary font-bold text-lg mb-1">Couldn't load availability</p>
+                <p className="text-muted-foreground text-sm max-w-sm">{error}</p>
+                <p className="text-muted-foreground text-sm mt-3">
                   Please try{" "}
                   <a
-                    href={`https://book.nightsbridge.com/${BBID}?nbid=${NBID}&startdate=${startdate}&nights=${nights}`}
+                    href={nightsbridgeBookUrl({ startdate, nights })}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#4aabba] underline font-semibold"
+                    className="text-secondary underline font-semibold"
                   >
                     booking online
                   </a>
@@ -323,16 +318,16 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
           {/* No rooms */}
           {!loading && !error && availableRooms.length === 0 && (
             <div className="flex flex-col items-center justify-center py-20 gap-4 text-center" role="status">
-              <BedDouble className="h-10 w-10 text-[#c0d0df]" aria-hidden="true" />
+              <BedDouble className="h-10 w-10 text-border" aria-hidden="true" />
               <div>
-                <p className="text-[#1a2e4a] font-bold text-lg mb-1">No rooms available</p>
-                <p className="text-[#5c6a7a] text-sm max-w-sm">
+                <p className="text-primary font-bold text-lg mb-1">No rooms available</p>
+                <p className="text-muted-foreground text-sm max-w-sm">
                   All rooms are booked for these dates. Try adjusting your dates or{" "}
                   <a
-                    href={`https://book.nightsbridge.com/${BBID}?nbid=${NBID}`}
+                    href={nightsbridgeBookUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#4aabba] underline font-semibold"
+                    className="text-secondary underline font-semibold"
                   >
                     check availability online
                   </a>{" "}
@@ -345,7 +340,7 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
           {/* Room cards */}
           {!loading && !error && availableRooms.length > 0 && (
             <>
-              <p className="text-sm text-[#5c6a7a] mb-5">
+              <p className="text-sm text-muted-foreground mb-5">
                 <span className="font-bold text-emerald-600">{availableRooms.length}</span> room type{availableRooms.length !== 1 ? "s" : ""} available · rates per room per night, Bed &amp; Breakfast included
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -363,15 +358,15 @@ export function AvailabilityModal({ open, onClose, checkIn, checkOut, nights, ad
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-[#e8e4df] bg-white flex items-center justify-between flex-wrap gap-3">
-          <p className="text-xs text-[#8a9ab0]">
+        <div className="px-6 py-4 border-t border-border bg-card flex items-center justify-between flex-wrap gap-3">
+          <p className="text-xs text-muted-foreground">
             Secure booking · Check-in 14:00 · Check-out 10:00
           </p>
           <a
-            href={`https://book.nightsbridge.com/${BBID}?nbid=${NBID}&startdate=${startdate}&nights=${nights}`}
+            href={nightsbridgeBookUrl({ startdate, nights })}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-semibold text-[#4aabba] hover:underline"
+            className="text-xs font-semibold text-secondary hover:underline"
           >
             View full availability →
           </a>

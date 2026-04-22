@@ -6,102 +6,102 @@
 @custom-variant touch (@media (hover: none));
 
 /*
-  Logo palette (dark → light):
-  --navy:       #1a2e4a  (deep navy from "LIQUID BLUE" text)
-  --steel:      #2d5080  (mid navy / body text)
-  --cobalt:     #3a7ab5  (steel blue wave upper layer)
-  --teal:       #4aabba  (mid teal wave)
-  --aqua:       #7ecfdd  (lightest aqua wave highlight)
+  Muofhe Graceland Lodge  earthy palette from logo:
+    --primary:       deep chocolate brown (#3E2723)
+    --secondary:     terracotta accent (#D84315)
+    --accent:        warm bronze / gold (#C9A227)
+    --clay:          burnt Sienna bridge tone (#BF360C)
 */
 
 :root {
-  /* Surface - warm cream tones for elegance */
-  --background: #faf9f7;
-  --foreground: #1a2e4a;
+  /* Surface  warm parchment */
+  --background: #faf8f5;
+  --foreground: #3e2723;
   --card: #ffffff;
-  --card-foreground: #1a2e4a;
+  --card-foreground: #3e2723;
   --popover: #ffffff;
-  --popover-foreground: #1a2e4a;
+  --popover-foreground: #3e2723;
 
-  /* Brand  deep navy */
-  --primary: #1a2e4a;
-  --primary-foreground: #ffffff;
+  /* Brand  chocolate */
+  --primary: #3e2723;
+  --primary-foreground: #faf8f5;
 
-  /* Brand  teal */
-  --secondary: #4aabba;
+  /* Terracotta */
+  --secondary: #d84315;
   --secondary-foreground: #ffffff;
 
-  /* Brand  aqua (light accent) */
-  --accent: #7ecfdd;
-  --accent-foreground: #1a2e4a;
+  /* Bronze / gold highlight */
+  --accent: #c9a227;
+  --accent-foreground: #3e2723;
 
-  /* Brand  cobalt (mid blue) */
-  --cobalt: #3a7ab5;
-  --cobalt-foreground: #ffffff;
+  /* Between terracotta and orange  overlays & mid gradients */
+  --clay: #bf360c;
+  --clay-foreground: #ffffff;
 
   /* Neutrals */
-  --muted: #f0ede8;
-  --muted-foreground: #5c6a7a;
-  --border: #e5e1da;
-  --input: #e8e5df;
-  --ring: #4aabba;
+  --muted: #f5f1eb;
+  --muted-foreground: #6d5348;
+  --border: #e8e1d9;
+  --input: #ebe4dc;
+  --ring: #d84315;
 
-  --destructive: #dc2626;
+  --destructive: #b71c1c;
   --destructive-foreground: #ffffff;
 
-  --radius: 0.625rem;
+  --radius: 0.75rem;
 
-  /* Charts */
-  --chart-1: #1a2e4a;
-  --chart-2: #3a7ab5;
-  --chart-3: #4aabba;
-  --chart-4: #7ecfdd;
-  --chart-5: #2d5080;
+  /* Charts  warm spectrum */
+  --chart-1: #3e2723;
+  --chart-2: #bf360c;
+  --chart-3: #d84315;
+  --chart-4: #c9a227;
+  --chart-5: #5d4037;
 
   /* Sidebar */
   --sidebar: #ffffff;
-  --sidebar-foreground: #1a2e4a;
-  --sidebar-primary: #1a2e4a;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f0ede8;
-  --sidebar-accent-foreground: #1a2e4a;
-  --sidebar-border: #e5e1da;
-  --sidebar-ring: #4aabba;
+  --sidebar-foreground: #3e2723;
+  --sidebar-primary: #3e2723;
+  --sidebar-primary-foreground: #faf8f5;
+  --sidebar-accent: #f5f1eb;
+  --sidebar-accent-foreground: #3e2723;
+  --sidebar-border: #e8e1d9;
+  --sidebar-ring: #d84315;
 }
 
 .dark {
-  --background: #0f1a2a;
-  --foreground: #f5f5f5;
-  --card: #162236;
-  --card-foreground: #f5f5f5;
-  --popover: #162236;
-  --popover-foreground: #f5f5f5;
-  --primary: #7ecfdd;
-  --primary-foreground: #0f1a2a;
-  --secondary: #2d5080;
-  --secondary-foreground: #f5f5f5;
-  --accent: #4aabba;
-  --accent-foreground: #f5f5f5;
-  --muted: #1e2d42;
-  --muted-foreground: #94a3b8;
-  --border: #2a3a52;
-  --input: #2a3a52;
-  --ring: #4aabba;
-  --destructive: #dc2626;
-  --destructive-foreground: #f5f5f5;
-  --sidebar: #162236;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #7ecfdd;
-  --sidebar-primary-foreground: #0f1a2a;
-  --sidebar-accent: #1e2d42;
-  --sidebar-accent-foreground: #f5f5f5;
-  --sidebar-border: #2a3a52;
-  --sidebar-ring: #4aabba;
+  --background: #1c1410;
+  --foreground: #faf8f5;
+  --card: #261c18;
+  --card-foreground: #faf8f5;
+  --popover: #261c18;
+  --popover-foreground: #faf8f5;
+  --primary: #d7c4a7;
+  --primary-foreground: #1c1410;
+  --secondary: #ff8a65;
+  --secondary-foreground: #1c1410;
+  --accent: #ffc107;
+  --accent-foreground: #1c1410;
+  --muted: #342a26;
+  --muted-foreground: #bcaaa4;
+  --border: #4e4039;
+  --input: #4e4039;
+  --ring: #ff8a65;
+  --destructive: #ef5350;
+  --destructive-foreground: #faf8f5;
+  --sidebar: #261c18;
+  --sidebar-foreground: #faf8f5;
+  --sidebar-primary: #d7c4a7;
+  --sidebar-primary-foreground: #1c1410;
+  --sidebar-accent: #342a26;
+  --sidebar-accent-foreground: #faf8f5;
+  --sidebar-border: #4e4039;
+  --sidebar-ring: #ff8a65;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: var(--font-montserrat), 'Montserrat Fallback', system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond Fallback', Georgia, serif;
+  --font-script: var(--font-great-vibes), 'Great Vibes Fallback', cursive;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
 
   --color-background: var(--background);
@@ -116,8 +116,8 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-cobalt: var(--cobalt);
-  --color-cobalt-foreground: var(--cobalt-foreground);
+  --color-clay: var(--clay);
+  --color-clay-foreground: var(--clay-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-destructive: var(--destructive);
@@ -151,14 +151,14 @@
          px-7 py-3 rounded-full font-medium text-sm tracking-wide
          transition-all duration-300
          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-  background: #1a2e4a;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(26, 46, 74, 0.25);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 4px 14px rgba(62, 39, 35, 0.28);
 }
 .btn-primary:hover {
-  background: #2d5080;
+  background: #5d4037;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(26, 46, 74, 0.35);
+  box-shadow: 0 6px 20px rgba(62, 39, 35, 0.38);
 }
 
 .btn-brand {
@@ -166,13 +166,13 @@
          px-7 py-3 rounded-full font-medium text-sm tracking-wide
          transition-all duration-300
          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-  background: linear-gradient(135deg, #4aabba 0%, #7ecfdd 100%);
-  color: #1a2e4a;
-  box-shadow: 0 4px 14px rgba(74, 171, 186, 0.35);
+  background: linear-gradient(135deg, #d84315 0%, #c9a227 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(216, 67, 21, 0.35);
 }
 .btn-brand:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 171, 186, 0.5);
+  box-shadow: 0 6px 20px rgba(216, 67, 21, 0.48);
 }
 
 .btn-outline {
@@ -181,11 +181,11 @@
          px-7 py-3 rounded-full font-medium text-sm tracking-wide
          transition-all duration-300
          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-  border-color: #4aabba;
-  color: #4aabba;
+  border-color: #d84315;
+  color: #d84315;
 }
 .btn-outline:hover {
-  background: #4aabba;
+  background: #d84315;
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -196,7 +196,7 @@
          transition-all duration-300
          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
   background: #ffffff;
-  color: #1a2e4a;
+  color: var(--primary);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 .btn-white:hover {
@@ -217,6 +217,27 @@
   transform: translateY(-2px);
 }
 
+/* Transparent logo  layered glow so artwork pops on hero / chrome / footer */
+.logo-pop-hero {
+  filter:
+    drop-shadow(0 2px 6px rgb(0 0 0 / 0.55))
+    drop-shadow(0 0 22px rgb(255 248 235 / 0.45))
+    drop-shadow(0 0 36px rgb(216 67 21 / 0.35))
+    drop-shadow(0 0 48px rgb(201 162 39 / 0.22));
+}
+.logo-pop-scrolled {
+  filter:
+    drop-shadow(0 3px 10px rgb(62 39 35 / 0.35))
+    drop-shadow(0 8px 24px rgb(62 39 35 / 0.12))
+    drop-shadow(0 0 20px rgb(216 67 21 / 0.18));
+}
+.logo-pop-footer {
+  filter:
+    drop-shadow(0 4px 14px rgb(0 0 0 / 0.55))
+    drop-shadow(0 0 28px rgb(255 220 170 / 0.2))
+    drop-shadow(0 0 40px rgb(216 67 21 / 0.25));
+}
+
 /* ─── Text on images - strong shadows for readability ──────────────────────── */
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -232,18 +253,18 @@
 .overlay-dark {
   background: linear-gradient(
     180deg,
-    rgba(26, 46, 74, 0.7) 0%,
-    rgba(26, 46, 74, 0.5) 40%,
-    rgba(26, 46, 74, 0.8) 100%
+    rgba(45, 27, 21, 0.78) 0%,
+    rgba(45, 27, 21, 0.48) 45%,
+    rgba(28, 20, 16, 0.85) 100%
   );
 }
 
 .overlay-gradient {
   background: linear-gradient(
     135deg,
-    rgba(26, 46, 74, 0.85) 0%,
-    rgba(45, 80, 128, 0.7) 50%,
-    rgba(58, 122, 181, 0.6) 100%
+    rgba(62, 39, 35, 0.88) 0%,
+    rgba(93, 64, 55, 0.72) 45%,
+    rgba(191, 54, 12, 0.55) 100%
   );
 }
 
@@ -283,7 +304,7 @@
 
 /* ─── Image skeleton loader ──────────────────────────────────────────────── */
 .skeleton {
-  background: linear-gradient(90deg, #e5e0d8 25%, #ede9e2 50%, #e5e0d8 75%);
+  background: linear-gradient(90deg, #e8e1d9 25%, #f0ebe4 50%, #e8e1d9 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.4s ease-in-out infinite;
 }
@@ -292,7 +313,7 @@
   100% { background-position: -200% 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .skeleton { animation: none; background: #e5e0d8; }
+  .skeleton { animation: none; background: #e8e1d9; }
 }
 .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
 .animate-slide-up { animation: slide-up 0.6s ease-out forwards; }
@@ -335,7 +356,7 @@
 
 /* ─── Focus-visible – high-visibility ring for keyboard navigation ─────── */
 :focus-visible {
-  outline: 3px solid #4aabba;
+  outline: 3px solid #d84315;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -359,9 +380,9 @@
 html { scroll-behavior: smooth; }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f0ede8; }
-::-webkit-scrollbar-thumb { background: #4aabba; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #3a7ab5; }
+::-webkit-scrollbar-track { background: #f5f1eb; }
+::-webkit-scrollbar-thumb { background: #bf360c; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #d84315; }
 
 @layer base {
   * { @apply border-border outline-ring/50; }

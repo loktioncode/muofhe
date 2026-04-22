@@ -19,11 +19,11 @@ export function LegalPage({
           <p className="text-xs font-semibold uppercase tracking-widest text-[#1a6b75] mb-2">
             Legal
           </p>
-          <h1 className="font-serif text-3xl sm:text-4xl font-medium text-[#1a2e4a]">
+          <h1 className="font-serif text-3xl sm:text-4xl font-medium text-primary">
             {title}
           </h1>
           <p className="mt-2 text-sm text-[#8a9aaa]">
-            Liquid Blue Guest House · Louis Trichardt, Limpopo, South Africa
+            Muofhe Graceland Lodge · Louis Trichardt, Limpopo, South Africa
           </p>
         </div>
       </section>
@@ -32,7 +32,7 @@ export function LegalPage({
         {children}
         <p className="pt-8 text-sm text-[#8a9aaa] border-t border-[#e8e4df]">
           Questions?{" "}
-          <Link href="/contact" className="text-[#4aabba] font-semibold hover:underline">
+          <Link href="/contact" className="text-secondary font-semibold hover:underline">
             Contact us
           </Link>
           .
@@ -47,7 +47,7 @@ export function LegalPage({
 
 export function LegalH2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-serif text-xl font-medium text-[#1a2e4a] pt-6 first:pt-0">
+    <h2 className="font-serif text-xl font-medium text-primary pt-6 first:pt-0">
       {children}
     </h2>
   )

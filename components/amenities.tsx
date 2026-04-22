@@ -13,6 +13,19 @@ import {
 } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
 import { WaveDivider } from "./wave-divider"
+import {
+  HERO_BACKGROUND_IMAGE,
+  PROPERTY_EXTERIOR_PHOTOS,
+  QUEEN_ROOM_PHOTOS,
+} from "@/lib/lodge-media"
+
+/** Lodge library  replaces removed `/images/*.jpg` stock assets */
+const AMENITY_SHOWCASE_IMAGES = [
+  PROPERTY_EXTERIOR_PHOTOS[4],
+  PROPERTY_EXTERIOR_PHOTOS[2],
+  QUEEN_ROOM_PHOTOS[0],
+  HERO_BACKGROUND_IMAGE,
+] as const
 
 const amenities = [
   {
@@ -75,7 +88,7 @@ export function Amenities() {
               <div className="space-y-4">
                 <div className="relative h-48 rounded-2xl overflow-hidden group shadow-lg">
                   <Image
-                    src="/images/pool.jpg"
+                    src={AMENITY_SHOWCASE_IMAGES[0]}
                     alt="Swimming Pool"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -84,7 +97,7 @@ export function Amenities() {
                 </div>
                 <div className="relative h-64 rounded-2xl overflow-hidden group shadow-lg">
                   <Image
-                    src="/images/restaurant.jpg"
+                    src={AMENITY_SHOWCASE_IMAGES[1]}
                     alt="Restaurant"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -95,7 +108,7 @@ export function Amenities() {
               <div className="space-y-4 pt-8">
                 <div className="relative h-64 rounded-2xl overflow-hidden group shadow-lg">
                   <Image
-                    src="/images/room-deluxe.jpg"
+                    src={AMENITY_SHOWCASE_IMAGES[2]}
                     alt="Deluxe Room"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -104,7 +117,7 @@ export function Amenities() {
                 </div>
                 <div className="relative h-48 rounded-2xl overflow-hidden group shadow-lg">
                   <Image
-                    src="/images/hero.jpg"
+                    src={AMENITY_SHOWCASE_IMAGES[3]}
                     alt="Guest House Exterior"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -118,7 +131,7 @@ export function Amenities() {
           {/* Content */}
           <div>
             <AnimatedSection>
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#1a2e4a]/8 text-[#1a2e4a] font-semibold tracking-wider uppercase text-xs">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-semibold tracking-wider uppercase text-xs">
               What We Offer
             </span>
               <h2 className="mt-4 font-serif text-3xl sm:text-4xl font-medium text-foreground text-balance">

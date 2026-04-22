@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { LegalPage, LegalH2 } from "@/components/legal-page"
 
 export const metadata: Metadata = {
-  title: "Liquid Blue Guest House — Privacy Policy",
+  title: "Liquid Blue Guest House  Privacy Policy",
   description:
     "How Liquid Blue Guest House collects, uses, and protects your personal information when you use our website or booking services.",
 }

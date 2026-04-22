@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server"
 import { format, addDays } from "date-fns"
-
-const BBID = 39595
+import { NIGHTSBRIDGE_BBID } from "@/lib/site-config"
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -10,7 +9,7 @@ export async function GET(request: Request) {
 
   try {
     const res = await fetch(
-      `https://www.nightsbridge.com/bridge/api/5.0/availability/${BBID}`,
+      `https://www.nightsbridge.com/bridge/api/5.0/availability/${NIGHTSBRIDGE_BBID}`,
       {
         method: "POST",
         headers: {

@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { format, addDays } from "date-fns"
-
-const BBID = 39595
-const NBID = 377
+import { nightsbridgeBookUrl } from "@/lib/site-config"
 
 export interface MealPlan {
   rateid: number
@@ -52,12 +50,11 @@ export function getRoomTypeRate(roomType: RoomType): number {
 
 /* ─── Booking URL helper ────────────────────────────────────────────────── */
 function buildBookingUrl(params: { startdate?: string; nights?: number; rtid?: number }) {
-  const base  = `https://book.nightsbridge.com/${BBID}`
-  const query = new URLSearchParams({ nbid: String(NBID) })
-  if (params.startdate) query.set("startdate", params.startdate)
-  if (params.nights)    query.set("nights",    String(params.nights))
-  if (params.rtid)      query.set("bbrtid",    String(params.rtid))
-  return `${base}?${query.toString()}`
+  return nightsbridgeBookUrl({
+    startdate: params.startdate,
+    nights: params.nights,
+    bbrtid: params.rtid,
+  })
 }
 
 /* ─── Hook ──────────────────────────────────────────────────────────────── */
