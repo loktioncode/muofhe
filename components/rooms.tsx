@@ -217,7 +217,7 @@ function RoomShowcaseBlock({
         </h3>
         {room.similarRoomCount != null && room.similarRoomCount > 1 && (
           <p className="mt-1.5 text-sm text-muted-foreground">
-            Photos show a typical unit
+            {room.similarRoomCount} identical rooms · photos show a typical unit
           </p>
         )}
         <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">{room.description}</p>
