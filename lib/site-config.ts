@@ -37,7 +37,7 @@ export const SITE_PHONE_DISPLAY =
   process.env.NEXT_PUBLIC_SITE_PHONE_DISPLAY ?? "015 962 4926"
 export const SITE_PHONE_TEL = process.env.NEXT_PUBLIC_SITE_PHONE_TEL ?? "+27159624926"
 export const SITE_EMAIL =
-  process.env.NEXT_PUBLIC_SITE_EMAIL ?? "liquidblueltt@gmail.com"
+  process.env.NEXT_PUBLIC_SITE_EMAIL ?? "info@mgl.co.za"
 
 export const SITE_ADDRESS_LINES = (
   process.env.NEXT_PUBLIC_SITE_ADDRESS ??
