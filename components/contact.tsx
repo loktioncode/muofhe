@@ -7,13 +7,18 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { AnimatedSection } from "./animated-section"
-import { SITE_EMAIL, SITE_NAME, SITE_PHONE_DISPLAY } from "@/lib/site-config"
+import {
+  SITE_ADDRESS_LINES,
+  SITE_EMAIL,
+  SITE_NAME,
+  SITE_PHONE_DISPLAY,
+} from "@/lib/site-config"
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: [SITE_NAME, "157 Forestry Rd", "Louis Trichardt, Limpopo"],
+    details: [SITE_NAME, ...SITE_ADDRESS_LINES],
   },
   {
     icon: Phone,
@@ -169,7 +174,7 @@ export function Contact() {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+27 68 240 4462"
+                      placeholder="015 962 4926"
                       autoComplete="tel"
                       className="h-12 border-2 transition-all duration-300 focus:border-primary"
                     />

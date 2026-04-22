@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Instagram, Music2, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
 import {
+  SITE_ADDRESS_LINES,
   SITE_EMAIL,
   SITE_LOGO_PATH,
   SITE_NAME,
@@ -92,8 +93,8 @@ export function Footer() {
               />
             </div>
             <p className="mt-5 text-sm leading-relaxed" style={{ color: "oklch(0.9 0.02 75)" }}>
-              Warm hospitality and peaceful stays at {SITE_NAME}. Where comfort meets African charmyour base in Louis
-              Trichardt.
+              Warm hospitality and peaceful stays at {SITE_NAME}. Where comfort meets African charm — your base in
+              Thohoyandou.
             </p>
 
             <div className="mt-7 flex gap-3">
@@ -147,7 +148,7 @@ export function Footer() {
               {[
                 {
                   icon: MapPin,
-                  lines: ["157 Forestry Rd", "Louis Trichardt, 0920", "Limpopo, South Africa"],
+                  lines: SITE_ADDRESS_LINES,
                   href: undefined,
                 },
                 { icon: Phone, lines: [SITE_PHONE_DISPLAY], href: `tel:${SITE_PHONE_TEL}` },

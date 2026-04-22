@@ -117,7 +117,7 @@ export function Hero() {
               {/* Badge (hidden on small screens to reduce hero clutter) */}
               <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-8">
                 <span className="w-2 h-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
-                Premier Guest House · Louis Trichardt, Limpopo
+                Premier Guest House · Thohoyandou, Limpopo
               </div>
 
               <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent drop-shadow-lg mb-4 leading-tight">

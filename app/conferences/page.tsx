@@ -19,7 +19,7 @@ import { SITE_NAME } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}  Conference centre & dining`,
-  description: `${SITE_NAME} offers a flexible conference centre in Louis Trichardt  meetings and events with on-site breakfast, lunch, and dinner for delegates and overnight guests.`,
+  description: `${SITE_NAME} offers a flexible conference centre in Thohoyandou  meetings and events with on-site breakfast, lunch, and dinner for delegates and overnight guests.`,
 }
 
 const offerings = [
@@ -48,7 +48,7 @@ const bullets = [
   "Catering for breakfast, lunch, and dinner",
   "Tea, coffee, and refreshment breaks on request",
   "Close to guest rooms for residential conferences",
-  "Louis Trichardt  easy access from major routes",
+  "Thohoyandou  easy access from major routes",
 ]
 
 export default function ConferencesPage() {
@@ -77,7 +77,7 @@ export default function ConferencesPage() {
               Conference centre &amp; catering at {SITE_NAME}
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-white/82 max-w-2xl leading-relaxed">
-              Bring your team or association to Louis Trichardt  dedicated function space plus full meal service so your
+              Bring your team or association to Thohoyandou  dedicated function space plus full meal service so your
               delegates can focus on the day while we take care of the table.
             </p>
           </AnimatedSection>

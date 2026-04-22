@@ -2,19 +2,19 @@
 
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
-import { SITE_EMAIL, SITE_PHONE_TEL } from "@/lib/site-config"
+import { SITE_ADDRESS_LINES, SITE_EMAIL, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from "@/lib/site-config"
 
 const INFO_CARDS = [
   {
     icon: MapPin,
     title: "Address",
-    lines: ["157 Forestry Rd", "Louis Trichardt, 0920", "Limpopo, South Africa"],
+    lines: SITE_ADDRESS_LINES,
     color: "from-primary to-[#5d4037]",
   },
   {
     icon: Phone,
     title: "Phone",
-    lines: ["+27 68 240 4462"],
+    lines: [SITE_PHONE_DISPLAY],
     href: `tel:${SITE_PHONE_TEL}`,
     color: "from-secondary to-accent",
   },

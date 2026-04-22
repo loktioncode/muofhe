@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import { LegalPage, LegalH2 } from "@/components/legal-page"
 import { PROPERTY } from "@/lib/rooms-data"
+import { SITE_NAME } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Liquid Blue Guest House  Cancellation Policy",
+  title: `${SITE_NAME}  Cancellation Policy`,
   description:
-    "Cancellation and forfeiture rules for bookings at Liquid Blue Guest House, Louis Trichardt.",
+    `Cancellation and forfeiture rules for bookings at ${SITE_NAME}, Thohoyandou.`,
 }
 
 export default function CancellationPolicyPage() {

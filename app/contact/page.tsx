@@ -9,10 +9,10 @@ import { SITE_NAME } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}  Contact`,
-  description: `Contact ${SITE_NAME} in Louis Trichardt, Limpopo  bookings, conference enquiries, or questions about your stay.`,
+  description: `Contact ${SITE_NAME} in Thohoyandou, Limpopo  bookings, conference enquiries, or questions about your stay.`,
   openGraph: {
     title: `${SITE_NAME}  Contact`,
-    description: `Contact ${SITE_NAME} in Louis Trichardt, Limpopo  bookings, conference enquiries, or questions about your stay.`,
+    description: `Contact ${SITE_NAME} in Thohoyandou, Limpopo  bookings, conference enquiries, or questions about your stay.`,
     url: "/contact",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME}  Contact`,
-    description: `Contact ${SITE_NAME} in Louis Trichardt, Limpopo  bookings, conference enquiries, or questions about your stay.`,
+    description: `Contact ${SITE_NAME} in Thohoyandou, Limpopo  bookings, conference enquiries, or questions about your stay.`,
     images: [CONTACT_PAGE_HERO_IMAGE],
   },
 }

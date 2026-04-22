@@ -28,7 +28,7 @@ const siteUrl = getSiteUrl()
 /** Used for Open Graph / Twitter when subpages do not override */
 const defaultOgImage = PROPERTY_EXTERIOR_PHOTOS[0]
 
-const siteTitle = `${SITE_NAME}  Louis Trichardt, Limpopo`
+const siteTitle = `${SITE_NAME}  Thohoyandou, Limpopo`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   keywords: [
     'guest house',
     'accommodation',
-    'Louis Trichardt',
+    'Thohoyandou',
     'Muofhe Graceland Lodge',
     'Limpopo',
     'South Africa',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
         url: defaultOgImage,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME}  exterior and grounds in Louis Trichardt, Limpopo`,
+        alt: `${SITE_NAME}  exterior and grounds in Thohoyandou, Limpopo`,
       },
     ],
   },

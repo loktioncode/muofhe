@@ -30,18 +30,21 @@ export const SITE_LOGO_PATH = "/images/logo-nobg.png"
 export const SITE_TAGLINE = "The Perfect Place To Stay!"
 
 export const SITE_DESCRIPTION =
-  "Louis Trichardt guest accommodation  thoughtfully appointed rooms with air conditioning, en-suite bathrooms, complimentary Wi‑Fi, and Bed & Breakfast. Relaxing pool and braai area."
+  "Thohoyandou guest accommodation  thoughtfully appointed rooms with air conditioning, en-suite bathrooms, complimentary Wi‑Fi, and Bed & Breakfast. Relaxing pool and braai area."
 
 /** Optional env overrides for contact details while the listing is finalized. */
 export const SITE_PHONE_DISPLAY =
-  process.env.NEXT_PUBLIC_SITE_PHONE_DISPLAY ?? "+27 68 240 4462"
-export const SITE_PHONE_TEL = process.env.NEXT_PUBLIC_SITE_PHONE_TEL ?? "+27682404462"
+  process.env.NEXT_PUBLIC_SITE_PHONE_DISPLAY ?? "015 962 4926"
+export const SITE_PHONE_TEL = process.env.NEXT_PUBLIC_SITE_PHONE_TEL ?? "+27159624926"
 export const SITE_EMAIL =
   process.env.NEXT_PUBLIC_SITE_EMAIL ?? "liquidblueltt@gmail.com"
 
 export const SITE_ADDRESS_LINES = (
-  process.env.NEXT_PUBLIC_SITE_ADDRESS ?? "157 Forestry Rd, Louis Trichardt, 0920, Limpopo, South Africa"
-).split(",").map((s) => s.trim())
+  process.env.NEXT_PUBLIC_SITE_ADDRESS ??
+  "Unit D, 14D Short St, Thohoyandou, 0950, Limpopo, South Africa"
+)
+  .split(",")
+  .map((s) => s.trim())
 
 export function nightsbridgeGalleryBase(imageSize: 500 | 1600): string {
   return `https://d1zyr4xmqw3mni.cloudfront.net/image/${imageSize}/gallery/${NIGHTSBRIDGE_BBID}`

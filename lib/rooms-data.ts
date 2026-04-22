@@ -154,9 +154,9 @@ export const TYPE_META: Record<number, { label: string; color: string; bedType: 
 
 export const PROPERTY = {
   name: SITE_NAME,
-  address: "157 Forestry Rd, Louis Trichardt, 0920",
-  lat: -23.028913,
-  lng: 29.91147,
+  address: "Unit D, 14D Short St, Thohoyandou, 0950",
+  lat: -22.965,
+  lng: 30.485,
   checkin: "14:00",
   checkout: "10:00",
   selfAssessment: "Guest house",
@@ -170,7 +170,7 @@ export const PROPERTY = {
     "Blouberg Nature Reserve",
     "Lake Fundudzi",
     "Langjan Nature Reserve",
-    "Louis Trichardt Golf Club",
+    "Thohoyandou town & markets",
   ],
-  directions: `From Polokwane International Airport, follow the N1 north for approximately 94 km. At the Louis Trichardt roundabout, take the exit onto Stubbs Street, then turn right onto Forestry Road. ${SITE_NAME} will be on your right after 210 m.`,
+  directions: `Located in Thohoyandou, Limpopo (Unit D, 14D Short St). Contact us for turn-by-turn directions or the best route from your starting point.`,
 }

@@ -13,7 +13,7 @@ const bookUrl = nightsbridgeBookUrl()
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}  About`,
-  description: `${SITE_NAME}  an African-inspired bed & breakfast in Louis Trichardt, Limpopo. Warm hospitality, twin and queen rooms, pool & braai, and a generous morning table at the foot of the Soutpansberg.`,
+  description: `${SITE_NAME}  an African-inspired bed & breakfast in Thohoyandou, Limpopo. Warm hospitality, twin and queen rooms, pool & braai, and a generous morning table at the foot of the Soutpansberg.`,
 }
 
 const values = [
@@ -33,7 +33,7 @@ const values = [
     icon: MapPin,
     title: "Soul of Limpopo",
     description:
-      "Between mountain air and fertile valleys, Louis Trichardt offers a gentle pace. We reflect that rhythm in how we host  calm, attentive, rooted in place.",
+      "Between mountain air and fertile valleys, Thohoyandou offers a gentle pace. We reflect that rhythm in how we host  calm, attentive, rooted in place.",
   },
   {
     icon: Star,
@@ -94,7 +94,7 @@ export default function AboutPage() {
               <span className="block text-white/95 mt-1">Bed &amp; breakfast soul.</span>
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-white/82 max-w-2xl leading-relaxed">
-              {SITE_NAME} is a calm, African-inspired stay in Louis Trichardt  where earthy comfort, a generous morning
+              {SITE_NAME} is a calm, African-inspired stay in Thohoyandou  where earthy comfort, a generous morning
               table, and Limpopo hospitality come together for travellers who want more than just a room.
             </p>
           </AnimatedSection>
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-[15px]">
                 <p>
                   We run {SITE_NAME} as a true bed &amp; breakfast: mornings matter. You will sit down to a proper
-                  breakfast before you step out into Louis Trichardt  whether you are tracing business across the
+                  breakfast before you step out into Thohoyandou  whether you are tracing business across the
                   province or slipping away to the mountains for the weekend.
                 </p>
                 <p>
@@ -173,12 +173,12 @@ export default function AboutPage() {
                 Where we are
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-medium text-primary-foreground mb-5">
-                Louis Trichardt,
+                Thohoyandou,
                 <br />
                 at the mountain&apos;s edge
               </h2>
               <p className="text-primary-foreground/75 leading-relaxed mb-6 text-[15px]">
-                Nestled below the Soutpansberg, Louis Trichardt blends cool Highveld air with Limpopo&apos;s warmth 
+                Nestled below the Soutpansberg, Thohoyandou blends cool Highveld air with Limpopo&apos;s warmth 
                 fertile valleys, roadside markets, and routes toward the greatest reserves in the north. {SITE_NAME}{" "}
                 sits close to everyday conveniences while keeping that slower, small-town cadence guests come here for.
               </p>
@@ -193,7 +193,7 @@ export default function AboutPage() {
                   "Hanglip Forest Reserve",
                   "Lake Fundudzi",
                   "Albasini Dam",
-                  "Louis Trichardt Golf Club",
+                  "Thohoyandou town & markets",
                   "Langjan Nature Reserve",
                 ].map((tag) => (
                   <span

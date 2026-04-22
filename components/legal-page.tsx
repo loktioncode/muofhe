@@ -23,7 +23,7 @@ export function LegalPage({
             {title}
           </h1>
           <p className="mt-2 text-sm text-[#8a9aaa]">
-            Muofhe Graceland Lodge · Louis Trichardt, Limpopo, South Africa
+            Muofhe Graceland Lodge · Thohoyandou, Limpopo, South Africa
           </p>
         </div>
       </section>
