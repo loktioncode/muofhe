@@ -21,7 +21,7 @@ import {
   formatRoomRate,
   type IndividualRoom,
 } from "@/lib/rooms-data"
-import { nightsbridgeBookUrl, SITE_NAME } from "@/lib/site-config"
+import { SITE_NAME } from "@/lib/site-config"
 import { AnimatedSection } from "./animated-section"
 import { cn } from "@/lib/utils"
 
@@ -349,24 +349,6 @@ export function Rooms() {
             </AnimatedSection>
           ))}
         </div>
-
-        <AnimatedSection delay={200} className="mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#booking"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-bold text-sm shadow-lg transition-all duration-300 hover:bg-[#5d4037] hover:-translate-y-0.5"
-          >
-            Check dates &amp; availability
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
-          <a
-            href={nightsbridgeBookUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border-2 border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
-            Open Nightsbridge
-          </a>
-        </AnimatedSection>
       </div>
     </section>
   )
