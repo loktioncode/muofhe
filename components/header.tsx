@@ -82,7 +82,9 @@ export function Header() {
               width={280}
               height={112}
               className={`h-[4.25rem] sm:h-[5rem] w-auto max-w-full object-contain transition-all duration-300 ease-out group-hover:scale-[1.04] ${
-                isScrolled ? "logo-pop-scrolled" : "logo-pop-hero"
+                isScrolled
+                  ? "logo-pop-scrolled"
+                  : "logo-pop-hero [filter:drop-shadow(0_12px_22px_rgba(45,24,16,0.89))]"
               }`}
               priority
             />
