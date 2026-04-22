@@ -30,7 +30,7 @@ export const SITE_LOGO_PATH = "/images/logo-nobg.png"
 export const SITE_TAGLINE = "The Perfect Place To Stay!"
 
 export const SITE_DESCRIPTION =
-  "Thohoyandou guest accommodation  thoughtfully appointed rooms with air conditioning, en-suite bathrooms, complimentary Wi‑Fi, and Bed & Breakfast. Relaxing pool and braai area."
+  "Family-friendly lodge in Thohoyandou: air-conditioned rooms with private bathrooms, free Wi‑Fi, on-site restaurant, year-round pool, garden, and free parking—near Mphaphuli Nature Reserve and Entabeni State Forest."
 
 /** Optional env overrides for contact details while the listing is finalized. */
 export const SITE_PHONE_DISPLAY =

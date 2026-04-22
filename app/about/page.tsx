@@ -4,16 +4,24 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { LocationMap } from "@/components/location-map"
+import { PropertyFacilities } from "@/components/property-facilities"
 import { AnimatedSection } from "@/components/animated-section"
-import { Heart, Coffee, MapPin, Star, ArrowRight, Check } from "lucide-react"
+import { Heart, Coffee, MapPin, Star, ArrowRight, Check, BedDouble, UtensilsCrossed, Trees } from "lucide-react"
 import { PROPERTY_EXTERIOR_PHOTOS, QUEEN_ROOM_PHOTOS, TWIN_ROOM_PHOTOS } from "@/lib/lodge-media"
-import { nightsbridgeBookUrl, SITE_NAME } from "@/lib/site-config"
+import { nightsbridgeBookUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site-config"
+import {
+  LODGE_ACCOMMODATION_SUMMARY,
+  LODGE_COUPLES_FEEDBACK,
+  LODGE_DINING_SUMMARY,
+  LODGE_LEISURE_SUMMARY,
+  LODGE_LOCATION_ACCESS,
+} from "@/lib/lodge-copy"
 
 const bookUrl = nightsbridgeBookUrl()
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}  About`,
-  description: `${SITE_NAME}  an African-inspired bed & breakfast in Thohoyandou, Limpopo. Warm hospitality, twin and queen rooms, pool & braai, and a generous morning table at the foot of the Soutpansberg.`,
+  description: SITE_DESCRIPTION,
 }
 
 const values = [
@@ -164,6 +172,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Stay, dine & unwind ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-24 bg-muted/40 border-y border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center max-w-2xl mx-auto mb-14">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold tracking-widest uppercase text-[11px] mb-4">
+              What we offer
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-primary leading-tight text-balance">
+              Comfortable stays, memorable meals, room to unwind
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            <AnimatedSection>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                <BedDouble className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-primary mb-3">Comfortable accommodations</h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">{LODGE_ACCOMMODATION_SUMMARY}</p>
+            </AnimatedSection>
+            <AnimatedSection delay={80}>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                <UtensilsCrossed className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-primary mb-3">Dining experience</h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">{LODGE_DINING_SUMMARY}</p>
+            </AnimatedSection>
+            <AnimatedSection delay={160}>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                <Trees className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-primary mb-3">Leisure facilities</h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">{LODGE_LEISURE_SUMMARY}</p>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* ── Location strip ───────────────────────────────────────────────── */}
       <section className="py-16 bg-primary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -177,19 +223,26 @@ export default function AboutPage() {
                 <br />
                 at the mountain&apos;s edge
               </h2>
-              <p className="text-primary-foreground/75 leading-relaxed mb-6 text-[15px]">
-                Nestled below the Soutpansberg, Thohoyandou blends cool Highveld air with Limpopo&apos;s warmth 
+              <p className="text-primary-foreground/75 leading-relaxed mb-4 text-[15px]">
+                Nestled below the Soutpansberg, Thohoyandou blends cool Highveld air with Limpopo&apos;s warmth —
                 fertile valleys, roadside markets, and routes toward the greatest reserves in the north. {SITE_NAME}{" "}
                 sits close to everyday conveniences while keeping that slower, small-town cadence guests come here for.
+              </p>
+              <p className="text-primary-foreground/80 leading-relaxed mb-6 text-[15px] border-l-2 border-white/25 pl-4">
+                {LODGE_LOCATION_ACCESS}
+              </p>
+              <p className="text-primary-foreground/70 leading-relaxed mb-6 text-[15px] italic border-l-2 border-accent/60 pl-4">
+                {LODGE_COUPLES_FEEDBACK}
               </p>
               <p className="text-primary-foreground/55 text-xs uppercase tracking-widest font-semibold mb-3">
                 Nearby attractions
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
+                  "Mphaphuli Nature Reserve",
+                  "Entabeni State Forest",
                   "Ben Lavin Nature Reserve",
                   "Mapungubwe National Park",
-                  "Entabeni Forest",
                   "Hanglip Forest Reserve",
                   "Lake Fundudzi",
                   "Albasini Dam",
@@ -310,6 +363,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PropertyFacilities />
 
       {/* ── CTA banner ───────────────────────────────────────────────────── */}
       <section className="relative py-24 overflow-hidden">

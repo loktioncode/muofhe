@@ -30,43 +30,43 @@ const AMENITY_SHOWCASE_IMAGES = [
 const amenities = [
   {
     icon: Waves,
-    title: "Swimming Pool",
-    description: "Relax by our sparkling outdoor pool with sun loungers and poolside service.",
+    title: "Outdoor swimming pool",
+    description: "Free access year-round for all ages — poolside loungers and umbrellas.",
   },
   {
     icon: Utensils,
-    title: "Restaurant & Bar",
-    description: "Savor delicious cuisine and refreshing drinks at our on-site restaurant.",
+    title: "Restaurant",
+    description: "On-site dining — breakfast through to evening meals where offered.",
   },
   {
     icon: Wifi,
-    title: "Free High-Speed WiFi",
-    description: "Stay connected with complimentary high-speed internet throughout the property.",
+    title: "Free Wi‑Fi",
+    description: "Complimentary wireless internet in all areas of the property.",
   },
   {
     icon: Car,
-    title: "Secure Parking",
-    description: "Complimentary secure parking for all guests with 24/7 surveillance.",
+    title: "Parking",
+    description: "Free private parking on site — no reservation needed. Valet available.",
   },
   {
     icon: ShieldCheck,
-    title: "24/7 Security",
-    description: "Your safety is our priority with round-the-clock security personnel.",
+    title: "Safety & security",
+    description: "24-hour security, CCTV in common areas, fire extinguishers, and in-room safe.",
   },
   {
     icon: Clock,
-    title: "24-Hour Reception",
-    description: "Our friendly staff is available around the clock to assist you.",
+    title: "24-hour front desk",
+    description: "Invoice on request, wake-up service, and support whenever you need it.",
   },
   {
     icon: Sparkles,
-    title: "Daily Housekeeping",
-    description: "Enjoy fresh linens and a spotless room with our daily cleaning service.",
+    title: "Daily housekeeping",
+    description: "Housekeeping included; laundry, ironing, and suit press available on request.",
   },
   {
     icon: Coffee,
-    title: "Breakfast Included",
-    description: "Start your day right with our complimentary continental breakfast.",
+    title: "Bed & breakfast",
+    description: "Morning table included — fuel up before you explore Thohoyandou and beyond.",
   },
 ]
 

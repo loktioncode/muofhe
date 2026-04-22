@@ -129,7 +129,8 @@ export function Hero() {
               </h1>
 
               <p className="mt-7 text-lg sm:text-xl text-white/85 max-w-xl leading-relaxed font-light">
-                Thoughtfully appointed rooms with warm African hospitalityideal for business and leisure. Bed &amp; Breakfast, pool &amp; braai area on site.
+                Family rooms with air-conditioning, private bathrooms, and free Wi‑Fi—plus our restaurant, garden, and a
+                year-round pool. Ideal for couples, families, and business travellers in Thohoyandou.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
