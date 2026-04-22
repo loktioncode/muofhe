@@ -28,7 +28,7 @@ export function PropertyFacilities({ className }: { className?: string }) {
             Everything for a comfortable stay
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed text-[15px]">
-            From breakfast and dining to parking, pool, and 24-hour support — here is what you can expect at{" "}
+            From breakfast and dining to parking, pool, and 24-hour support  here is what you can expect at{" "}
             {SITE_NAME}.
           </p>
         </AnimatedSection>

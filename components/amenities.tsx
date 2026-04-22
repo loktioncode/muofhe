@@ -31,12 +31,12 @@ const amenities = [
   {
     icon: Waves,
     title: "Outdoor swimming pool",
-    description: "Free access year-round for all ages — poolside loungers and umbrellas.",
+    description: "Free access year-round for all ages  poolside loungers and umbrellas.",
   },
   {
     icon: Utensils,
     title: "Restaurant",
-    description: "On-site dining — breakfast through to evening meals where offered.",
+    description: "On-site dining  breakfast through to evening meals where offered.",
   },
   {
     icon: Wifi,
@@ -46,7 +46,7 @@ const amenities = [
   {
     icon: Car,
     title: "Parking",
-    description: "Free private parking on site — no reservation needed. Valet available.",
+    description: "Free private parking on site  no reservation needed. Valet available.",
   },
   {
     icon: ShieldCheck,
@@ -66,7 +66,7 @@ const amenities = [
   {
     icon: Coffee,
     title: "Bed & breakfast",
-    description: "Morning table included — fuel up before you explore Thohoyandou and beyond.",
+    description: "Morning table included  fuel up before you explore Thohoyandou and beyond.",
   },
 ]
 

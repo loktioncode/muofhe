@@ -14,7 +14,7 @@ export interface AmenityGroup {
   items: AmenityItem[]
 }
 
-/** Booking-style “popular” highlights — quick scan */
+/** Booking-style “popular” highlights  quick scan */
 export const POPULAR_AMENITIES: string[] = [
   "Restaurant",
   "Parking",

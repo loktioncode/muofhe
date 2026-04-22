@@ -93,7 +93,7 @@ export function Footer() {
               />
             </div>
             <p className="mt-5 text-sm leading-relaxed" style={{ color: "oklch(0.9 0.02 75)" }}>
-              Warm hospitality and peaceful stays at {SITE_NAME}. Where comfort meets African charm — your base in
+              Warm hospitality and peaceful stays at {SITE_NAME}. Where comfort meets African charm  your base in
               Thohoyandou.
             </p>
 

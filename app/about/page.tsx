@@ -224,7 +224,7 @@ export default function AboutPage() {
                 at the mountain&apos;s edge
               </h2>
               <p className="text-primary-foreground/75 leading-relaxed mb-4 text-[15px]">
-                Nestled below the Soutpansberg, Thohoyandou blends cool Highveld air with Limpopo&apos;s warmth —
+                Nestled below the Soutpansberg, Thohoyandou blends cool Highveld air with Limpopo&apos;s warmth 
                 fertile valleys, roadside markets, and routes toward the greatest reserves in the north. {SITE_NAME}{" "}
                 sits close to everyday conveniences while keeping that slower, small-town cadence guests come here for.
               </p>
