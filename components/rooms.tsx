@@ -313,11 +313,12 @@ export function Rooms() {
             Stay with us
           </span>
           <h2 className="font-serif text-[clamp(1.75rem,5vw,2.75rem)] font-semibold text-primary leading-tight text-balance">
-            Two room types,{" "}
-            <span className="text-secondary">consistent comfort</span>
+
+            <span className="text-secondary">Comfort you can settle Into</span>
           </h2>
           <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-            Every guest room matches one of these layoutstwin (two singles) or queen. Multiple units of each mean you always know what you&apos;re booking.
+            Every stay is air-conditioned and en-suite, with either two singles or a queen bed. Same thoughtful setup across
+            each room type so you know exactly the restful space you&apos;re booking.
           </p>
 
           <div aria-live="polite" className="mt-6 min-h-[28px] flex justify-center items-center">

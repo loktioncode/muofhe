@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, Phone, Facebook, Instagram, Music2 } from "lucide-react"
+import { Menu, Phone, Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import {
@@ -27,9 +27,8 @@ const navigation = [
 const NIGHTSBRIDGE_BOOK = nightsbridgeBookUrl()
 
 const SOCIAL_LINKS = [
-  { name: "Facebook", href: "https://www.facebook.com/share/1HCL1i4bpC/", icon: Facebook },
-  { name: "Instagram", href: "https://www.instagram.com/liquidblueltt?igsh=ZWl1ZXYzN2V4N3Qy", icon: Instagram },
-  { name: "TikTok", href: "https://www.tiktok.com/@liquidblueltt", icon: Music2 },
+  { name: "Facebook", href: "https://www.facebook.com/muofhegraceland/", icon: Facebook },
+  { name: "Instagram", href: "https://www.instagram.com/muofhegraceland/", icon: Instagram },
 ]
 
 function isNavActive(pathname: string, hash: string, href: string) {

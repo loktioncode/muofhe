@@ -49,10 +49,10 @@ export const HERO_BACKGROUND_IMAGE = PROPERTY_EXTERIOR_PHOTOS[1]
 export const CONTACT_PAGE_HERO_IMAGE = lodgeImageUrl("IMG-20201028-WA0039.png")
 
 /**
- * Conference & dining page  provisional images from the lodge library until dedicated venue photography is added.
+ * Conference & dining page hero and gallery (grounds and exterior from the lodge library).
  */
 export const CONFERENCE_CENTER_HERO_IMAGE = PROPERTY_EXTERIOR_PHOTOS[6]
-export const CONFERENCE_CENTER_PLACEHOLDER_IMAGES = [
+export const CONFERENCE_CENTER_GALLERY_IMAGES = [
   PROPERTY_EXTERIOR_PHOTOS[3],
   PROPERTY_EXTERIOR_PHOTOS[7],
   PROPERTY_EXTERIOR_PHOTOS[10],

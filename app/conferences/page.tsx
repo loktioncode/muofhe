@@ -13,7 +13,7 @@ import {
 } from "lucide-react"
 import {
   CONFERENCE_CENTER_HERO_IMAGE,
-  CONFERENCE_CENTER_PLACEHOLDER_IMAGES,
+  CONFERENCE_CENTER_GALLERY_IMAGES,
 } from "@/lib/lodge-media"
 import { SITE_NAME } from "@/lib/site-config"
 
@@ -60,7 +60,7 @@ export default function ConferencesPage() {
         <div className="absolute inset-0">
           <Image
             src={CONFERENCE_CENTER_HERO_IMAGE}
-            alt={`${SITE_NAME}  venue and surrounds (placeholder photo)`}
+            alt={`${SITE_NAME}  conference and dining venue, exterior and grounds`}
             fill
             className="object-cover"
             priority
@@ -102,8 +102,7 @@ export default function ConferencesPage() {
                 </p>
                 <p>
                   Share your dates, approximate numbers, and meal preferences with us  we will tailor a package that
-                  fits your programme and budget. Venue photography on this page uses placeholder lodge images until our
-                  dedicated conference shots are ready  the experience on site is what counts.
+                  fits your programme and budget.
                 </p>
               </div>
               <ul className="mt-8 space-y-3">
@@ -121,16 +120,13 @@ export default function ConferencesPage() {
             <AnimatedSection delay={120} className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/8 aspect-[4/3] relative">
                 <Image
-                  src={CONFERENCE_CENTER_PLACEHOLDER_IMAGES[0]}
-                  alt={`${SITE_NAME}  lodge grounds (placeholder)`}
+                  src={CONFERENCE_CENTER_GALLERY_IMAGES[0]}
+                  alt={`${SITE_NAME}  lodge grounds and venue setting`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
-              <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
-                Illustrative imagery from our property library  conference room photos coming soon.
-              </p>
             </AnimatedSection>
           </div>
         </div>
@@ -167,17 +163,14 @@ export default function ConferencesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-10 text-center">
             <h2 className="font-serif text-2xl sm:text-3xl font-medium text-primary">Venue snapshots</h2>
-            <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
-              Placeholder photography  we will refresh this gallery with dedicated conference and dining images.
-            </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {CONFERENCE_CENTER_PLACEHOLDER_IMAGES.map((src, i) => (
+            {CONFERENCE_CENTER_GALLERY_IMAGES.map((src, i) => (
               <AnimatedSection key={src} delay={i * 60}>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 group">
                   <Image
                     src={src}
-                    alt={`${SITE_NAME}  property image ${i + 1} (placeholder)`}
+                    alt={`${SITE_NAME}  venue and grounds, photo ${i + 1}`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     sizes="(max-width: 768px) 100vw, 33vw"

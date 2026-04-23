@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Instagram, Music2, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
+import { Facebook, Instagram, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
 import {
   SITE_ADDRESS_LINES,
   SITE_EMAIL,
@@ -26,9 +26,8 @@ const navigation = {
     { name: "Cancellation Policy", href: "/cancellation" },
   ],
   social: [
-    { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/1HCL1i4bpC/" },
-    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/liquidblueltt?igsh=ZWl1ZXYzN2V4N3Qy" },
-    { name: "TikTok", icon: Music2, href: "https://www.tiktok.com/@liquidblueltt" },
+    { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/muofhegraceland/" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/muofhegraceland/" },
   ],
 }
 
