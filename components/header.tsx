@@ -31,9 +31,12 @@ const SOCIAL_LINKS = [
   { name: "Instagram", href: "https://www.instagram.com/muofhegraceland/", icon: Instagram },
 ]
 
-function isNavActive(pathname: string, hash: string, href: string) {
-  if (href === "/#gallery") return pathname === "/" && hash === "#gallery"
-  if (href === "/") return pathname === "/" && hash !== "#gallery"
+/** Pixels from top (fixed header) before we treat the gallery as the “current” home section */
+const HOME_GALLERY_SCROLL_OFFSET = 96
+
+function isNavActive(pathname: string, homeSubNav: "home" | "gallery", href: string) {
+  if (href === "/#gallery") return pathname === "/" && homeSubNav === "gallery"
+  if (href === "/") return pathname === "/" && homeSubNav === "home"
   return pathname === href
 }
 
@@ -42,7 +45,8 @@ export function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [hash, setHash] = useState("")
+  /** On `/`, which in-page anchor matches scroll position (hash alone is wrong after scrolling back to hero). */
+  const [homeSubNav, setHomeSubNav] = useState<"home" | "gallery">("home")
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -51,12 +55,26 @@ export function Header() {
   }, [])
 
   useEffect(() => {
-    setHash(typeof window !== "undefined" ? window.location.hash : "")
-    function onHash() {
-      setHash(window.location.hash)
+    if (pathname !== "/") return
+
+    function updateHomeSubNav() {
+      const gallery = document.getElementById("gallery")
+      if (!gallery) {
+        setHomeSubNav("home")
+        return
+      }
+      const galleryTop = gallery.getBoundingClientRect().top + window.scrollY
+      const crossed = window.scrollY + HOME_GALLERY_SCROLL_OFFSET >= galleryTop - 24
+      setHomeSubNav(crossed ? "gallery" : "home")
     }
-    window.addEventListener("hashchange", onHash)
-    return () => window.removeEventListener("hashchange", onHash)
+
+    updateHomeSubNav()
+    window.addEventListener("scroll", updateHomeSubNav, { passive: true })
+    window.addEventListener("resize", updateHomeSubNav)
+    return () => {
+      window.removeEventListener("scroll", updateHomeSubNav)
+      window.removeEventListener("resize", updateHomeSubNav)
+    }
   }, [pathname])
 
   return (
@@ -94,7 +112,7 @@ export function Header() {
             aria-label="Main navigation"
           >
             {navigation.map((item) => {
-              const active = isNavActive(pathname, hash, item.href)
+              const active = isNavActive(pathname, homeSubNav, item.href)
               return (
                 <Link
                   key={item.name}
@@ -186,7 +204,7 @@ export function Header() {
 
                   <nav className="flex-1 py-6 px-4" aria-label="Mobile navigation">
                     {navigation.map((item) => {
-                      const active = isNavActive(pathname, hash, item.href)
+                      const active = isNavActive(pathname, homeSubNav, item.href)
                       return (
                         <Link
                           key={item.name}

@@ -154,7 +154,7 @@ export const TYPE_META: Record<number, { label: string; color: string; bedType: 
 
 export const PROPERTY = {
   name: SITE_NAME,
-  address: "Unit D, 14D Short St, Thohoyandou, 0950",
+  address: "14D Mphephu Road, Thohoyandou, South Africa",
   lat: -22.965,
   lng: 30.485,
   checkin: "14:00",
@@ -172,5 +172,5 @@ export const PROPERTY = {
     "Langjan Nature Reserve",
     "Thohoyandou town & markets",
   ],
-  directions: `Located in Thohoyandou, Limpopo (Unit D, 14D Short St). Contact us for turn-by-turn directions or the best route from your starting point.`,
+  directions: `Located at 14D Mphephu Road, Thohoyandou, South Africa. Contact us for turn-by-turn directions or the best route from your starting point.`,
 }

@@ -37,11 +37,11 @@ export const SITE_PHONE_DISPLAY =
   process.env.NEXT_PUBLIC_SITE_PHONE_DISPLAY ?? "015 962 4926"
 export const SITE_PHONE_TEL = process.env.NEXT_PUBLIC_SITE_PHONE_TEL ?? "+27159624926"
 export const SITE_EMAIL =
-  process.env.NEXT_PUBLIC_SITE_EMAIL ?? "info@mgl.co.za"
+  process.env.NEXT_PUBLIC_SITE_EMAIL ?? "support@muofhegraceland.co.za"
 
 export const SITE_ADDRESS_LINES = (
   process.env.NEXT_PUBLIC_SITE_ADDRESS ??
-  "Unit D, 14D Short St, Thohoyandou, 0950, Limpopo, South Africa"
+  "14D Mphephu Road, Thohoyandou, South Africa"
 )
   .split(",")
   .map((s) => s.trim())

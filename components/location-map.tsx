@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react"
 import { SITE_NAME } from "@/lib/site-config"
 
 const MAP_EMBED =
-  "https://maps.google.com/maps?q=Unit+D,+14D+Short+St,+Thohoyandou,+0950,+South+Africa&z=17&output=embed"
+  "https://maps.google.com/maps?q=14D+Mphephu+Road,+Thohoyandou,+South+Africa&z=17&output=embed"
 
 export function LocationMap() {
   return (
