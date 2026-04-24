@@ -1,17 +1,16 @@
 "use client"
 
 import { MapPin } from "lucide-react"
-import { SITE_NAME } from "@/lib/site-config"
-
-const MAP_EMBED =
-  "https://maps.google.com/maps?q=14D+Mphephu+Road,+Thohoyandou,+South+Africa&z=17&output=embed"
+import { SITE_NAME, siteAddressMapsEmbedUrl } from "@/lib/site-config"
 
 export function LocationMap() {
+  const mapEmbedSrc = siteAddressMapsEmbedUrl()
+
   return (
     <section aria-label="Location map" className="w-full">
       <div className="relative w-full" style={{ height: "280px" }}>
         <iframe
-          src={MAP_EMBED}
+          src={mapEmbedSrc}
           width="100%"
           height="280"
           style={{ border: 0 }}

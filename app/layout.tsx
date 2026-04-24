@@ -90,6 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${montserrat.variable} ${cormorant.variable} ${greatVibes.variable}`}
       suppressHydrationWarning
     >

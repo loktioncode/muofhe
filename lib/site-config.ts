@@ -46,6 +46,12 @@ export const SITE_ADDRESS_LINES = (
   .split(",")
   .map((s) => s.trim())
 
+/** Google Maps embed URL from {@link SITE_ADDRESS_LINES} so the map and footer stay aligned. */
+export function siteAddressMapsEmbedUrl(): string {
+  const q = encodeURIComponent(SITE_ADDRESS_LINES.join(", "))
+  return `https://maps.google.com/maps?q=${q}&z=17&output=embed`
+}
+
 export function nightsbridgeGalleryBase(imageSize: 500 | 1600): string {
   return `https://d1zyr4xmqw3mni.cloudfront.net/image/${imageSize}/gallery/${NIGHTSBRIDGE_BBID}`
 }
