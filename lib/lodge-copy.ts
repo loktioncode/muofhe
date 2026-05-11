@@ -3,13 +3,13 @@
  */
 
 export const LODGE_ACCOMMODATION_SUMMARY =
-  "Muofhe Graceland Lodge in Thohoyandou offers family rooms with air-conditioning, private bathrooms, and free Wi‑Fi. Each room includes a dining table, work desk, TV, and wardrobe."
+  "Muofhe Graceland Lodge is a charming three-star hotel located in the heart of the Vhembe district of Venda, just 3 minutes from Khoroni (formerly Venda Sun) along the renowned Mphephu Road (R523). Next to the historic Old Minister's House, the lodge provides a vibrant atmosphere and easy access to local attractions, making it an ideal getaway for travellers."
 
 export const LODGE_DINING_SUMMARY =
-  "The family-friendly restaurant serves African, British, American, barbecue grill, and South African cuisines. Guests can enjoy lunch and dinner in a welcoming ambiance."
+  "Enjoy a delicious dining experience at Graceland Eats, serving breakfast, lunch, and supper daily in a relaxed and comfortable atmosphere."
 
 export const LODGE_LEISURE_SUMMARY =
-  "The lodge features a year-round outdoor swimming pool, a lush garden, and an outdoor seating area. Free on-site private parking is available for guests."
+  "Unwind at the beautiful outdoor swimming pool designed for peaceful relaxation, refreshing swims, and quality moments with family and friends."
 
 /** Driving distances  metric first, imperial in parentheses */
 export const LODGE_LOCATION_ACCESS =

@@ -39,10 +39,10 @@ export interface IndividualRoom {
 }
 
 const TWIN_DESC =
-  "Bright twin room with two comfortable single beds, shared headboard, crisp linen, and air conditioning. Ideal for colleagues, friends, or family travelling together."
+  "The Sharing Room features two comfortable single beds and a modern en suite bathroom with shower. Perfect for friends or colleagues traveling together, it offers a practical and relaxing space at an affordable rate. Enjoy a simple yet stylish setup designed for a restful stay."
 
 const QUEEN_DESC =
-  "Relax in a queen-size bed with premium linen, workspace, wardrobe, and air conditioningcalm tones and thoughtful touches for a restful stay."
+  "The Standard Room at Muofhe Graceland Lodge offers a cozy queen-sized bed and a modern en suite bathroom with shower. Designed for comfort and simplicity, it is ideal for both leisure and business travellers. Enjoy a restful stay with all the essentials you need at an affordable rate."
 
 const BASE = [
   "Air Conditioning",
@@ -61,9 +61,9 @@ const QUEEN_AM = [...BASE]
 export const INDIVIDUAL_ROOMS: IndividualRoom[] = [
   {
     roomNumber: 1,
-    displayName: "Twin room",
+    displayName: "Sharing room",
     rtid: LODGE_RTID_TWIN,
-    typeName: "Twin room",
+    typeName: "Sharing room",
     bedType: "2 × single beds",
     enSuite: "Private en-suite shower",
     size: "Comfort twin layout",
@@ -74,9 +74,9 @@ export const INDIVIDUAL_ROOMS: IndividualRoom[] = [
   },
   {
     roomNumber: 2,
-    displayName: "Queen room",
+    displayName: "Standard room",
     rtid: LODGE_RTID_QUEEN,
-    typeName: "Queen room",
+    typeName: "Standard room",
     bedType: "1 × queen-size bed",
     enSuite: "Private en-suite shower",
     size: "Comfort queen layout",

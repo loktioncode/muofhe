@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, Phone, Facebook, Instagram } from "lucide-react"
+import { Menu, Phone, Facebook, Instagram, Music2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import {
@@ -13,6 +13,7 @@ import {
   SITE_NAME,
   SITE_PHONE_DISPLAY,
   SITE_PHONE_TEL,
+  SITE_TIKTOK_URL,
 } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
@@ -29,6 +30,7 @@ const NIGHTSBRIDGE_BOOK = nightsbridgeBookUrl()
 const SOCIAL_LINKS = [
   { name: "Facebook", href: "https://www.facebook.com/muofhegraceland/", icon: Facebook },
   { name: "Instagram", href: "https://www.instagram.com/muofhegraceland/", icon: Instagram },
+  { name: "TikTok", href: SITE_TIKTOK_URL, icon: Music2 },
 ]
 
 /** Pixels from top (fixed header) before we treat the gallery as the “current” home section */
@@ -90,15 +92,15 @@ export function Header() {
         <div className="flex items-center justify-between lg:justify-start gap-3 lg:gap-4">
           <Link
             href="/"
-            className="flex shrink-0 items-center group lg:min-w-0 lg:flex-1 lg:justify-start max-w-[min(100%,15.5rem)] lg:max-w-[16rem]"
+            className="flex shrink-0 items-center group lg:min-w-0 lg:flex-1 lg:justify-start max-w-[min(100%,15.5rem)] lg:max-w-[19rem] xl:max-w-[21.5rem] 2xl:max-w-[23.5rem]"
             aria-label={`${SITE_NAME}  home`}
           >
             <Image
               src={SITE_LOGO_PATH}
               alt={`${SITE_NAME} logo`}
-              width={280}
-              height={112}
-              className={`h-[4.25rem] sm:h-[5rem] w-auto max-w-full object-contain transition-all duration-300 ease-out group-hover:scale-[1.04] ${
+              width={360}
+              height={144}
+              className={`h-[4.25rem] sm:h-[5rem] lg:h-[5.75rem] xl:h-[6.25rem] 2xl:h-[6.75rem] w-auto max-w-full object-contain transition-all duration-300 ease-out group-hover:scale-[1.04] ${
                 isScrolled
                   ? "logo-pop-scrolled"
                   : "logo-pop-hero [filter:drop-shadow(0_12px_22px_rgba(45,24,16,0.89))]"

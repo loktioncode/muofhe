@@ -117,10 +117,10 @@ export function Hero() {
               {/* Badge (hidden on small screens to reduce hero clutter) */}
               <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-8">
                 <span className="w-2 h-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
-                Premier Guest House · Thohoyandou, Limpopo
+                Lodge and Conference Centre · Thohoyandou, Limpopo
               </div>
 
-              <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent drop-shadow-lg mb-4 leading-tight">
+              <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-white drop-shadow-2xl text-shadow-strong mb-4 leading-tight">
                 {SITE_TAGLINE}
               </p>
 
@@ -129,8 +129,10 @@ export function Hero() {
               </h1>
 
               <p className="mt-7 text-lg sm:text-xl text-white/85 max-w-xl leading-relaxed font-light">
-                Family rooms with air-conditioning, private bathrooms, and free Wi‑Fiplus our restaurant, garden, and a
-                year-round pool. Ideal for couples, families, and business travellers in Thohoyandou.
+                Muofhe Graceland Lodge is a charming three-star hotel located in the heart of the Vhembe district of
+                Venda, just 3 minutes from Khoroni (formerly Venda Sun) along the renowned Mphephu Road (R523). Next
+                to the historic Old Minister&apos;s House, the lodge provides a vibrant atmosphere and easy access to
+                local attractions, making it an ideal getaway for travellers.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">

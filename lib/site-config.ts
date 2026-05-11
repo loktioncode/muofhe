@@ -27,10 +27,10 @@ export const SITE_NAME = "Muofhe Graceland Lodge"
 /** Transparent PNG  used site-wide so the brand floats above any background */
 export const SITE_LOGO_PATH = "/images/logo-nobg.png"
 
-export const SITE_TAGLINE = "The Perfect Place To Stay!"
+export const SITE_TAGLINE = "The Perfect Place to stay"
 
 export const SITE_DESCRIPTION =
-  "Family-friendly lodge in Thohoyandou: air-conditioned rooms with private bathrooms, free Wi‑Fi, on-site restaurant, year-round pool, garden, and free parkingnear Mphaphuli Nature Reserve and Entabeni State Forest."
+  "Muofhe Graceland Lodge is a charming three-star hotel located in the heart of the Vhembe district of Venda, just 3 minutes from Khoroni along Mphephu Road (R523), offering modern rooms, dining, and leisure facilities."
 
 /** Optional env overrides for contact details while the listing is finalized. */
 export const SITE_PHONE_DISPLAY =
@@ -38,6 +38,11 @@ export const SITE_PHONE_DISPLAY =
 export const SITE_PHONE_TEL = process.env.NEXT_PUBLIC_SITE_PHONE_TEL ?? "+27159624926"
 export const SITE_EMAIL =
   process.env.NEXT_PUBLIC_SITE_EMAIL ?? "support@muofhegraceland.co.za"
+export const SITE_TIKTOK_URL =
+  process.env.NEXT_PUBLIC_SITE_TIKTOK_URL ?? "https://www.tiktok.com/@muofhe.graceland?_r=1&_t=ZS-96DzcmHwcPl"
+export const SITE_RESTAURANT_MENU_URL =
+  process.env.NEXT_PUBLIC_SITE_RESTAURANT_MENU_URL ??
+  "https://www.premierhotels.co.za/wp-content/uploads/2020/12/PHRW-Restaurant-Menu.pdf"
 
 export const SITE_ADDRESS_LINES = (
   process.env.NEXT_PUBLIC_SITE_ADDRESS ??

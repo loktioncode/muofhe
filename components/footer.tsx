@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Instagram, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
+import { Facebook, Instagram, Mail, Phone, MapPin, ArrowUp, Music2 } from "lucide-react"
 import {
   SITE_ADDRESS_LINES,
   SITE_EMAIL,
@@ -10,6 +10,7 @@ import {
   SITE_NAME,
   SITE_PHONE_DISPLAY,
   SITE_PHONE_TEL,
+  SITE_TIKTOK_URL,
 } from "@/lib/site-config"
 
 const navigation = {
@@ -28,6 +29,7 @@ const navigation = {
   social: [
     { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/muofhegraceland/" },
     { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/muofhegraceland/" },
+    { name: "TikTok", icon: Music2, href: SITE_TIKTOK_URL },
   ],
 }
 

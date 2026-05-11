@@ -15,7 +15,7 @@ import {
   CONFERENCE_CENTER_HERO_IMAGE,
   CONFERENCE_CENTER_GALLERY_IMAGES,
 } from "@/lib/lodge-media"
-import { SITE_NAME } from "@/lib/site-config"
+import { SITE_NAME, SITE_RESTAURANT_MENU_URL } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}  Conference centre & dining`,
@@ -179,6 +179,39 @@ export default function ConferencesPage() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24 bg-muted/35 border-y border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <AnimatedSection>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
+              Restaurant &amp; dining
+            </span>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-5">
+              Enjoy a delicious dining experience at Graceland Eats, the welcoming diner located inside Muofhe
+              Graceland Lodge. Serving breakfast, lunch, and supper daily, Graceland Eats offers guests a relaxed and
+              comfortable atmosphere.
+            </p>
+            <a
+              href={SITE_RESTAURANT_MENU_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[#5d4037] transition-colors"
+            >
+              Download restaurant menu (PDF)
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </AnimatedSection>
+          <AnimatedSection delay={120}>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
+              Swimming pool &amp; relaxation
+            </span>
+            <p className="text-muted-foreground leading-relaxed text-[15px]">
+              Unwind and relax at the outdoor swimming pool at Muofhe Graceland Lodge. It offers a calm and inviting
+              space to refresh, relax, and enjoy peaceful moments between meetings, events, or leisure activities.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 

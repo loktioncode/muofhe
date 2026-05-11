@@ -1,6 +1,6 @@
 import { getSiteUrl } from '@/lib/site-url'
 import { PROPERTY_EXTERIOR_PHOTOS } from '@/lib/lodge-media'
-import { SITE_DESCRIPTION, SITE_EMAIL, SITE_NAME, SITE_PHONE_TEL } from '@/lib/site-config'
+import { SITE_DESCRIPTION, SITE_EMAIL, SITE_NAME, SITE_PHONE_TEL, SITE_TIKTOK_URL } from '@/lib/site-config'
 
 /** LodgingBusiness structured data for rich results / Google Maps alignment */
 export function LocalBusinessJsonLd() {
@@ -28,6 +28,11 @@ export function LocalBusinessJsonLd() {
     },
     image: `${base}${PROPERTY_EXTERIOR_PHOTOS[0]}`,
     priceRange: '$$',
+    sameAs: [
+      "https://www.facebook.com/muofhegraceland/",
+      "https://www.instagram.com/muofhegraceland/",
+      SITE_TIKTOK_URL,
+    ],
   }
 
   return (

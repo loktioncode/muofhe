@@ -8,7 +8,7 @@ import { PropertyFacilities } from "@/components/property-facilities"
 import { AnimatedSection } from "@/components/animated-section"
 import { Heart, Coffee, MapPin, Star, ArrowRight, Check, BedDouble, UtensilsCrossed, Trees } from "lucide-react"
 import { PROPERTY_EXTERIOR_PHOTOS, QUEEN_ROOM_PHOTOS, TWIN_ROOM_PHOTOS } from "@/lib/lodge-media"
-import { nightsbridgeBookUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site-config"
+import { nightsbridgeBookUrl, SITE_DESCRIPTION, SITE_NAME, SITE_RESTAURANT_MENU_URL } from "@/lib/site-config"
 import {
   LODGE_ACCOMMODATION_SUMMARY,
   LODGE_COUPLES_FEEDBACK,
@@ -95,21 +95,21 @@ export default function AboutPage() {
           <AnimatedSection>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-xs font-bold uppercase tracking-widest mb-6">
               <Heart className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
-              Our story
+              About us
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-tight">
-              African warmth.
-              <span className="block text-white/95 mt-1">Bed &amp; breakfast soul.</span>
+              About {SITE_NAME}
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-white/82 max-w-2xl leading-relaxed">
-              {SITE_NAME} is a calm, African-inspired stay in Thohoyandou  where earthy comfort, a generous morning
-              table, and Limpopo hospitality come together for travellers who want more than just a room.
+              Muofhe Graceland Lodge embodies warm African hospitality and comfort in the heart of Limpopo. Situated on
+              Mphephu Road in Thohoyandou, we offer travelers, families, and business guests a peaceful place to
+              experience the vibrant spirit of Venda.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Our Story ────────────────────────────────────────────────────── */}
+      {/* ── About us ─────────────────────────────────────────────────────── */}
       <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -136,28 +136,23 @@ export default function AboutPage() {
 
             <AnimatedSection delay={150}>
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
-                Who we are
+                About us
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-medium text-primary leading-snug">
-                A lodge built for the<br />
-                stay  not just the sleep
+                Warm hospitality in the heart of Venda
               </h2>
               <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-[15px]">
                 <p>
-                  We run {SITE_NAME} as a true bed &amp; breakfast: mornings matter. You will sit down to a proper
-                  breakfast before you step out into Thohoyandou  whether you are tracing business across the
-                  province or slipping away to the mountains for the weekend.
+                  The lodge blends modern comfort with cultural authenticity, ensuring guests feel at home while
+                  connecting with local heritage. Known for friendly service and a relaxing atmosphere, we provide cozy
+                  rooms, modern amenities, an inviting pool, and a secure environment.
                 </p>
                 <p>
-                  Our guest rooms follow two familiar layouts  <strong className="text-primary font-medium">twin</strong>{" "}
-                  (two singles) and <strong className="text-primary font-medium">queen</strong>  each repeated across
-                  multiple units so you always know what you are booking. Every room offers en-suite facilities, air
-                  conditioning, Wi‑Fi, satellite TV, and space to work or unwind.
+                  More than just a lodge, Muofhe Graceland Lodge is a place for memorable experiences, whether for
+                  business, leisure, or celebrations.
                 </p>
                 <p>
-                  Outside your door, slow down by the pool or fire up the braai as the day cools  the rhythms of a South
-                  African guest house, done with care. Textures, tones, and welcome here echo the landscape: warm earth,
-                  soft light, and hosts who are proud to share their corner of Limpopo.
+                  Our commitment is to offer genuine hospitality and a memorable stay for every guest.
                 </p>
               </div>
               <Link
@@ -169,6 +164,56 @@ export default function AboutPage() {
               </Link>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24 bg-background border-y border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="max-w-3xl">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
+              Conferencing &amp; events
+            </span>
+            <p className="text-muted-foreground leading-relaxed text-[15px]">
+              At Muofhe Graceland Lodge, we offer modern event spaces suited for both professional and social occasions.
+              Our spacious Conference Hall accommodates up to 250 guests, ideal for conferences, weddings, and
+              celebrations, while our elegant Boardroom fits up to 30 guests for executive meetings and intimate
+              gatherings. We provide flexible conference packages tailored to different event needs and budgets.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24 bg-muted/35">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <AnimatedSection>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
+              Restaurant &amp; dining
+            </span>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-5">
+              Enjoy a delicious dining experience at Graceland Eats, the welcoming diner located inside Muofhe
+              Graceland Lodge. Serving breakfast, lunch, and supper daily, Graceland Eats offers a relaxed atmosphere
+              perfect for casual dining, business lunches, and family meals.
+            </p>
+            <a
+              href={SITE_RESTAURANT_MENU_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[#5d4037] transition-colors"
+            >
+              Download restaurant menu (PDF)
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </AnimatedSection>
+          <AnimatedSection delay={120}>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
+              Swimming pool &amp; relaxation
+            </span>
+            <p className="text-muted-foreground leading-relaxed text-[15px]">
+              Unwind and relax at the beautiful outdoor swimming pool at Muofhe Graceland Lodge. Designed to create a
+              calm and inviting atmosphere, the pool area is the perfect place for guests to refresh, relax, and enjoy
+              peaceful moments during their stay.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 

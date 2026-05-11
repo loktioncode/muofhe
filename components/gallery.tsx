@@ -40,14 +40,30 @@ const ALL_IMAGES: GalleryImage[] = [
     alt: `Twin room – photo ${i + 1}`,
     category: "Twin room",
   })),
-  ...PROPERTY_EXTERIOR_PHOTOS.map((src, i) => ({
-    src,
-    alt: i === 0 ? `${SITE_NAME} – grounds` : `${SITE_NAME} – exterior ${i + 1}`,
-    category: "Property",
-  })),
+  ...PROPERTY_EXTERIOR_PHOTOS.map((src, i) => {
+    if (i === 2) {
+      return {
+        src,
+        alt: "Graceland Eats restaurant area",
+        category: "Restaurant",
+      }
+    }
+    if (i === 4) {
+      return {
+        src,
+        alt: "Swimming pool at Muofhe Graceland Lodge",
+        category: "Swimming pool",
+      }
+    }
+    return {
+      src,
+      alt: i === 0 ? `${SITE_NAME} – grounds` : `${SITE_NAME} – exterior ${i + 1}`,
+      category: "Property",
+    }
+  }),
 ].filter((img) => isRasterWebImage(img.src))
 
-const CATEGORY_FILTER_ORDER = ["Queen room", "Twin room", "Property"] as const
+const CATEGORY_FILTER_ORDER = ["Queen room", "Twin room", "Restaurant", "Swimming pool", "Property"] as const
 
 const _present = new Set(ALL_IMAGES.map((i) => i.category))
 const POPULAR_TYPE_NAMES = new Set(
@@ -252,7 +268,8 @@ export function Gallery() {
           <p className="mt-4 text-[#5c6a7a] leading-relaxed">
             <span className="md:hidden">Swipe through our rooms, pool, and shared spaces. Tap a photo for full screen.</span>
             <span className="hidden md:inline">
-              Take a virtual tour of {SITE_NAME}rooms, common areas, and surroundings. Click any photo to browse the full carousel.
+              Take a virtual tour of {SITE_NAME} rooms, common areas, restaurant, pool, and surroundings. Click any
+              photo to browse the full carousel.
             </span>
           </p>
         </AnimatedSection>

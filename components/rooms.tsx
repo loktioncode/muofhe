@@ -317,8 +317,9 @@ export function Rooms() {
             <span className="text-secondary">Comfort you can settle Into</span>
           </h2>
           <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-            Every stay is air-conditioned and en-suite, with either two singles or a queen bed. Same thoughtful setup across
-            each room type so you know exactly the restful space you&apos;re booking.
+            Experience comfort and style in thoughtfully designed rooms, equipped with modern furnishings, air
+            conditioning, a tea and coffee station, satellite TV, and a private en suite bathroom. Enjoy attentive room
+            service that cares for every detail for a relaxing stay.
           </p>
 
           <div aria-live="polite" className="mt-6 min-h-[28px] flex justify-center items-center">
