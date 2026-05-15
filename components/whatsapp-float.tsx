@@ -1,7 +1,7 @@
 import { siteWhatsAppUrl, SITE_NAME } from "@/lib/site-config"
 
 /**
- * Fixed floating action button — WhatsApp brand green, opens wa.me chat.
+ * Fixed floating action button   WhatsApp brand green, opens wa.me chat.
  */
 export function WhatsAppFloat() {
   const href = siteWhatsAppUrl()

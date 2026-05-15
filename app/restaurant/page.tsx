@@ -11,10 +11,10 @@ import { SITE_NAME, SITE_RESTAURANT_MENU_EMBED_URL, SITE_RESTAURANT_MENU_URL } f
 const GRACELAND_EATS_LOGO = "/images/eats-logo.png"
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} — Graceland Eats restaurant`,
+  title: `${SITE_NAME}   Graceland Eats restaurant`,
   description: `Graceland Eats at ${SITE_NAME} in Thohoyandou serves breakfast, lunch, and supper daily. À la carte dining, relaxed atmosphere, and warm hospitality.`,
   openGraph: {
-    title: `${SITE_NAME} — Graceland Eats`,
+    title: `${SITE_NAME}   Graceland Eats`,
     description: `Dine at Graceland Eats inside ${SITE_NAME}: daily meals, à la carte menu, and excellent service.`,
     url: "/restaurant",
     images: [{ url: RESTAURANT_AREA_PHOTO, width: 1200, height: 630, alt: "Graceland Eats at Muofhe Graceland Lodge" }],
@@ -48,7 +48,7 @@ export default function RestaurantPage() {
                 Graceland Eats
               </h1>
               <p className="mt-4 text-lg text-white/85 max-w-xl leading-relaxed">
-                The welcoming diner inside {SITE_NAME}—breakfast, lunch, and supper daily.
+                The welcoming diner inside {SITE_NAME} breakfast, lunch, and supper daily.
               </p>
             </div>
             <div className="rounded-2xl bg-white/95 border border-white/30 px-8 py-6 shadow-xl shrink-0">

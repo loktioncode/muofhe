@@ -40,7 +40,7 @@ export function SwimmingPoolGallery({ images, siteName }: Props) {
   return (
     <div>
       <p className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-8">
-        Gallery includes one current lodge image and illustrative pool photos as placeholders—we will replace placeholders
+        Gallery includes one current lodge image and illustrative pool photos as placeholders we will replace placeholders
         with on-site shots as soon as they are available.
       </p>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

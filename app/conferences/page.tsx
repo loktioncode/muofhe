@@ -10,7 +10,7 @@ import { CONFERENCE_CENTER_HERO_IMAGE } from "@/lib/lodge-media"
 import { SITE_NAME } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} — Conferences & events`,
+  title: `${SITE_NAME}   Conferences & events`,
   description: `${SITE_NAME} in Thohoyandou offers a flexible conference centre for meetings, weddings, and residential delegate packages.`,
 }
 
@@ -54,7 +54,7 @@ export default function ConferencesPage() {
           <AnimatedSection>
             <h2 className="font-serif text-3xl sm:text-4xl font-medium mb-4">Plan your event</h2>
             <p className="text-primary-foreground/80 leading-relaxed mb-10">
-              Tell us your dates, delegate numbers, and space requirements—we will respond with availability and an outline
+              Tell us your dates, delegate numbers, and space requirements we will respond with availability and an outline
               for your conference or function.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

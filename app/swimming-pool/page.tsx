@@ -11,10 +11,10 @@ import { SWIMMING_POOL_GALLERY } from "@/lib/swimming-pool-gallery"
 import { SITE_NAME } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} — Swimming pool`,
-  description: `Relax at the outdoor swimming pool at ${SITE_NAME} in Thohoyandou—calm atmosphere, space to unwind, and leisure for every guest.`,
+  title: `${SITE_NAME}   Swimming pool`,
+  description: `Relax at the outdoor swimming pool at ${SITE_NAME} in Thohoyandou calm atmosphere, space to unwind, and leisure for every guest.`,
   openGraph: {
-    title: `${SITE_NAME} — Swimming pool`,
+    title: `${SITE_NAME}   Swimming pool`,
     description: `Outdoor pool and poolside relaxation at ${SITE_NAME}.`,
     url: "/swimming-pool",
     images: [{ url: SWIMMING_POOL_PHOTO, width: 1200, height: 630, alt: "Swimming pool at Muofhe Graceland Lodge" }],
