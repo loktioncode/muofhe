@@ -17,8 +17,9 @@ const navigation = {
   main: [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Gallery", href: "/#gallery" },
     { name: "Conferences", href: "/conferences" },
+    { name: "Swimming pool", href: "/swimming-pool" },
+    { name: "Restaurant", href: "/restaurant" },
     { name: "Contact", href: "/contact" },
   ],
   legal: [

@@ -173,12 +173,24 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
               Conferencing &amp; events
             </span>
-            <p className="text-muted-foreground leading-relaxed text-[15px]">
-              At Muofhe Graceland Lodge, we offer modern event spaces suited for both professional and social occasions.
-              Our spacious Conference Hall accommodates up to 250 guests, ideal for conferences, weddings, and
-              celebrations, while our elegant Boardroom fits up to 30 guests for executive meetings and intimate
-              gatherings. We provide flexible conference packages tailored to different event needs and budgets.
-            </p>
+            <div className="text-muted-foreground leading-relaxed text-[15px] space-y-4">
+              <p>
+                At Muofhe Graceland Lodge, we offer modern event spaces suited for both professional and social occasions.
+              </p>
+              <p>
+                Our spacious Conference Hall accommodates up to 250 guests, ideal for conferences, weddings, and
+                celebrations. With its contemporary design, it sets the stage for memorable events.
+              </p>
+              <p>
+                For smaller gatherings, our elegant Boardroom fits up to 30 guests, perfect for executive meetings and
+                intimate gatherings.
+              </p>
+              <p>
+                We provide flexible conference packages tailored to meet various event needs and budgets. Whether for
+                business or special celebrations, Muofhe Graceland Lodge combines the perfect space with warm hospitality for
+                a memorable experience.
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -189,11 +201,22 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
               Restaurant &amp; dining
             </span>
-            <p className="text-muted-foreground leading-relaxed text-[15px] mb-5">
-              Enjoy a delicious dining experience at Graceland Eats, the welcoming diner located inside Muofhe
-              Graceland Lodge. Serving breakfast, lunch, and supper daily, Graceland Eats offers a relaxed atmosphere
-              perfect for casual dining, business lunches, and family meals.
-            </p>
+            <div className="text-muted-foreground leading-relaxed text-[15px] mb-5 space-y-4">
+              <p>
+                Enjoy a delicious dining experience at Graceland Eats, the welcoming diner located inside Muofhe
+                Graceland Lodge.
+              </p>
+              <p>
+                Serving breakfast, lunch, and supper daily, Graceland Eats offers guests a relaxed and comfortable
+                atmosphere perfect for casual dining, business lunches, and family meals. Our carefully prepared dishes
+                combine great taste with warm hospitality to create a memorable culinary experience.
+              </p>
+              <p>
+                Guests can also enjoy a diverse à la carte menu featuring a variety of freshly prepared meals to suit
+                every taste and occasion. Whether you are starting your day with a hearty breakfast or unwinding over
+                dinner, Graceland Eats is the perfect place to enjoy quality food and excellent service.
+              </p>
+            </div>
             <a
               href={SITE_RESTAURANT_MENU_URL}
               target="_blank"
@@ -208,11 +231,18 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-5">
               Swimming pool &amp; relaxation
             </span>
-            <p className="text-muted-foreground leading-relaxed text-[15px]">
-              Unwind and relax at the beautiful outdoor swimming pool at Muofhe Graceland Lodge. Designed to create a
-              calm and inviting atmosphere, the pool area is the perfect place for guests to refresh, relax, and enjoy
-              peaceful moments during their stay.
-            </p>
+            <div className="text-muted-foreground leading-relaxed text-[15px] space-y-4">
+              <p>
+                Unwind and relax at the beautiful outdoor swimming pool at Muofhe Graceland Lodge. Designed to create a
+                calm and inviting atmosphere, the pool area is the perfect place for guests to refresh, relax, and enjoy
+                peaceful moments during their stay.
+              </p>
+              <p>
+                Whether you are taking a refreshing swim on a warm day, spending quality time with family and friends, or
+                simply relaxing beside the water, our beautifully maintained swimming pool offers a comfortable and
+                enjoyable leisure experience for all guests.
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </section>

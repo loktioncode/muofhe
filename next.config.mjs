@@ -16,6 +16,11 @@ const nextConfig = {
         hostname: "production-nb-dfs.s3.amazonaws.com",
         pathname: "/gallery/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 }

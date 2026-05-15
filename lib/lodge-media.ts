@@ -57,3 +57,9 @@ export const CONFERENCE_CENTER_GALLERY_IMAGES = [
   PROPERTY_EXTERIOR_PHOTOS[7],
   PROPERTY_EXTERIOR_PHOTOS[10],
 ]
+
+/** Same index as gallery “Swimming pool” category (`PROPERTY_EXTERIOR_PHOTOS` index 4). */
+export const SWIMMING_POOL_PHOTO = PROPERTY_EXTERIOR_PHOTOS[4]
+
+/** Same index as gallery “Restaurant” category (`PROPERTY_EXTERIOR_PHOTOS` index 2). */
+export const RESTAURANT_AREA_PHOTO = PROPERTY_EXTERIOR_PHOTOS[2]

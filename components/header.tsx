@@ -4,15 +4,13 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, Phone, Facebook, Instagram, Music2 } from "lucide-react"
+import { Menu, Facebook, Instagram, Music2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import {
   nightsbridgeBookUrl,
   SITE_LOGO_PATH,
   SITE_NAME,
-  SITE_PHONE_DISPLAY,
-  SITE_PHONE_TEL,
   SITE_TIKTOK_URL,
 } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
@@ -20,8 +18,9 @@ import { cn } from "@/lib/utils"
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Gallery", href: "/#gallery" },
   { name: "Conferences", href: "/conferences" },
+  { name: "Swimming pool", href: "/swimming-pool" },
+  { name: "Restaurant", href: "/restaurant" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -33,12 +32,8 @@ const SOCIAL_LINKS = [
   { name: "TikTok", href: SITE_TIKTOK_URL, icon: Music2 },
 ]
 
-/** Pixels from top (fixed header) before we treat the gallery as the “current” home section */
-const HOME_GALLERY_SCROLL_OFFSET = 96
-
-function isNavActive(pathname: string, homeSubNav: "home" | "gallery", href: string) {
-  if (href === "/#gallery") return pathname === "/" && homeSubNav === "gallery"
-  if (href === "/") return pathname === "/" && homeSubNav === "home"
+function isNavActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/"
   return pathname === href
 }
 
@@ -47,37 +42,12 @@ export function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  /** On `/`, which in-page anchor matches scroll position (hash alone is wrong after scrolling back to hero). */
-  const [homeSubNav, setHomeSubNav] = useState<"home" | "gallery">("home")
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  useEffect(() => {
-    if (pathname !== "/") return
-
-    function updateHomeSubNav() {
-      const gallery = document.getElementById("gallery")
-      if (!gallery) {
-        setHomeSubNav("home")
-        return
-      }
-      const galleryTop = gallery.getBoundingClientRect().top + window.scrollY
-      const crossed = window.scrollY + HOME_GALLERY_SCROLL_OFFSET >= galleryTop - 24
-      setHomeSubNav(crossed ? "gallery" : "home")
-    }
-
-    updateHomeSubNav()
-    window.addEventListener("scroll", updateHomeSubNav, { passive: true })
-    window.addEventListener("resize", updateHomeSubNav)
-    return () => {
-      window.removeEventListener("scroll", updateHomeSubNav)
-      window.removeEventListener("resize", updateHomeSubNav)
-    }
-  }, [pathname])
 
   return (
     <header
@@ -114,7 +84,7 @@ export function Header() {
             aria-label="Main navigation"
           >
             {navigation.map((item) => {
-              const active = isNavActive(pathname, homeSubNav, item.href)
+              const active = isNavActive(pathname, item.href)
               return (
                 <Link
                   key={item.name}
@@ -137,16 +107,6 @@ export function Header() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-3 md:gap-4 xl:gap-5 lg:min-w-0 lg:flex-1 lg:justify-end">
-            <a
-              href={`tel:${SITE_PHONE_TEL}`}
-              aria-label={`Call us on ${SITE_PHONE_DISPLAY}`}
-              className={`hidden md:flex shrink-0 items-center gap-2 text-sm font-medium whitespace-nowrap transition-colors duration-300 ${
-                isScrolled ? "text-primary hover:text-secondary" : "text-white/90 hover:text-white"
-              }`}
-            >
-              <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-              <span className="hidden lg:inline">{SITE_PHONE_DISPLAY}</span>
-            </a>
             <div className="hidden md:flex items-center gap-2 shrink-0">
               {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
                 <a
@@ -173,7 +133,7 @@ export function Header() {
               className={cn(
                 "hidden sm:inline-flex shrink-0 whitespace-nowrap",
                 isScrolled ? "btn-brand" : "btn-white",
-                /* Slightly tighter than global btn so five links + phone + socials fit comfortably */
+                /* Slightly tighter than global btn so links + socials fit comfortably */
                 "!px-5 !py-2.5 xl:!px-7 xl:!py-3 text-sm",
               )}
             >
@@ -206,7 +166,7 @@ export function Header() {
 
                   <nav className="flex-1 py-6 px-4" aria-label="Mobile navigation">
                     {navigation.map((item) => {
-                      const active = isNavActive(pathname, homeSubNav, item.href)
+                      const active = isNavActive(pathname, item.href)
                       return (
                         <Link
                           key={item.name}
@@ -242,13 +202,6 @@ export function Header() {
                     >
                       Contact Us
                     </Link>
-                    <a
-                      href={`tel:${SITE_PHONE_TEL}`}
-                      className="flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground pt-1"
-                    >
-                      <Phone className="h-4 w-4 text-secondary" aria-hidden="true" />
-                      {SITE_PHONE_DISPLAY}
-                    </a>
                     <div className="flex items-center justify-center gap-3 pt-1.5">
                       {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
                         <a

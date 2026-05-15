@@ -40,9 +40,37 @@ export const SITE_EMAIL =
   process.env.NEXT_PUBLIC_SITE_EMAIL ?? "support@muofhegraceland.co.za"
 export const SITE_TIKTOK_URL =
   process.env.NEXT_PUBLIC_SITE_TIKTOK_URL ?? "https://www.tiktok.com/@muofhe.graceland?_r=1&_t=ZS-96DzcmHwcPl"
+
+/**
+ * WhatsApp number for `wa.me` links: digits only with country code (no +).
+ * Default +27 61 496 8458. Override with `NEXT_PUBLIC_SITE_WHATSAPP_E164`.
+ */
+export const SITE_WHATSAPP_E164 = (
+  process.env.NEXT_PUBLIC_SITE_WHATSAPP_E164 ?? "27614968458"
+).replace(/\D/g, "")
+
+/** Opens WhatsApp chat (app or web). Optional pre-filled message. */
+export function siteWhatsAppUrl(message?: string): string {
+  const base = `https://wa.me/${SITE_WHATSAPP_E164}`
+  if (!message?.trim()) return base
+  return `${base}?text=${encodeURIComponent(message.trim())}`
+}
+
+/** Google Drive file id for Graceland Eats menu PDF (drive.google.com/file/d/…/view). */
+const GRACELAND_EATS_MENU_DRIVE_FILE_ID = "1L1NyOaryL20nrBnJ_Ghl-dJLsxenK8md"
+
+/** Opens the file in Google Drive (browser tab). Override with `NEXT_PUBLIC_SITE_RESTAURANT_MENU_URL`. */
 export const SITE_RESTAURANT_MENU_URL =
   process.env.NEXT_PUBLIC_SITE_RESTAURANT_MENU_URL ??
-  "https://www.premierhotels.co.za/wp-content/uploads/2020/12/PHRW-Restaurant-Menu.pdf"
+  `https://drive.google.com/file/d/${GRACELAND_EATS_MENU_DRIVE_FILE_ID}/view`
+
+/**
+ * Same menu, Drive `/preview` URL for `<iframe>` embeds (`/view` is unreliable in iframes).
+ * Override with `NEXT_PUBLIC_SITE_RESTAURANT_MENU_EMBED_URL`.
+ */
+export const SITE_RESTAURANT_MENU_EMBED_URL =
+  process.env.NEXT_PUBLIC_SITE_RESTAURANT_MENU_EMBED_URL ??
+  `https://drive.google.com/file/d/${GRACELAND_EATS_MENU_DRIVE_FILE_ID}/preview`
 
 export const SITE_ADDRESS_LINES = (
   process.env.NEXT_PUBLIC_SITE_ADDRESS ??

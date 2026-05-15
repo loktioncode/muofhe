@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat, Cormorant_Garamond, Great_Vibes } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { WhatsAppFloat } from '@/components/whatsapp-float'
 import { getSiteUrl } from '@/lib/site-url'
 import { PROPERTY_EXTERIOR_PHOTOS } from '@/lib/lodge-media'
 import { SITE_DESCRIPTION, SITE_NAME } from '@/lib/site-config'
@@ -109,6 +110,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <WhatsAppFloat />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
