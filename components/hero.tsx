@@ -147,7 +147,7 @@ export function Hero() {
 
               <p className="mt-7 text-lg sm:text-xl text-white/85 max-w-xl leading-relaxed font-light">
                 Muofhe Graceland Lodge is a charming three-star hotel located in the heart of the Vhembe district of
-                Vendaalong the renowned Mphephu Road (R523). Next
+                Venda, along the renowned Mphephu Road (R523). Next
                 to the historic Old Minister&apos;s House, the lodge provides a vibrant atmosphere and easy access to
                 local attractions, making it an ideal getaway for travellers.
               </p>
