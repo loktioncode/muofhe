@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Montserrat, Cormorant_Garamond, Great_Vibes } from 'next/font/google'
+import { Montserrat, Cormorant_Garamond, Great_Vibes, Nunito } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { WhatsAppFloat } from '@/components/whatsapp-float'
 import { getSiteUrl } from '@/lib/site-url'
@@ -22,6 +22,13 @@ const greatVibes = Great_Vibes({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-great-vibes',
+})
+
+/** Rounded, friendly display for homepage hero tagline and property name */
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-nunito',
 })
 
 const siteUrl = getSiteUrl()
@@ -92,7 +99,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${montserrat.variable} ${cormorant.variable} ${greatVibes.variable}`}
+      className={`${montserrat.variable} ${cormorant.variable} ${greatVibes.variable} ${nunito.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">

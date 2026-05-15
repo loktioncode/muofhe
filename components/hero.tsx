@@ -120,11 +120,28 @@ export function Hero() {
                 Lodge and Conference Centre · Thohoyandou, Limpopo
               </div>
 
-              <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-white drop-shadow-2xl text-shadow-strong mb-4 leading-tight">
-                {SITE_TAGLINE}
+              <p className="font-hero-rounded font-semibold text-2xl sm:text-3xl md:text-4xl mb-4 leading-snug tracking-wide drop-shadow-2xl">
+                {(() => {
+                  const highlight = "Perfect Place"
+                  if (!SITE_TAGLINE.includes(highlight)) {
+                    return (
+                      <span className="text-white text-shadow-strong">{SITE_TAGLINE}</span>
+                    )
+                  }
+                  const [before, rest] = SITE_TAGLINE.split(highlight)
+                  return (
+                    <>
+                      <span className="text-white/95 text-shadow-strong">{before}</span>
+                      <span className="text-accent text-shadow-strong [text-shadow:0_2px_14px_rgba(0,0,0,0.55),0_0_40px_rgba(201,162,39,0.35)]">
+                        {highlight}
+                      </span>
+                      <span className="text-white/95 text-shadow-strong">{rest}</span>
+                    </>
+                  )
+                })()}
               </p>
 
-              <h1 className="font-serif font-semibold text-white leading-[1.06] drop-shadow-2xl text-[clamp(1.85rem,6.5vw,4.25rem)] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+              <h1 className="font-hero-rounded font-extrabold text-white leading-[1.08] drop-shadow-2xl tracking-tight text-[clamp(1.85rem,6.5vw,4.25rem)] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
                 <span className="block whitespace-nowrap">{SITE_NAME}</span>
               </h1>
 

@@ -102,6 +102,7 @@
   --font-sans: var(--font-montserrat), 'Montserrat Fallback', system-ui, sans-serif;
   --font-serif: var(--font-cormorant), 'Cormorant Garamond Fallback', Georgia, serif;
   --font-script: var(--font-great-vibes), 'Great Vibes Fallback', cursive;
+  --font-hero-rounded: var(--font-nunito), ui-rounded, 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
 
   --color-background: var(--background);
