@@ -51,7 +51,7 @@ export default function RestaurantPage() {
                 The welcoming diner inside {SITE_NAME} breakfast, lunch, and supper daily.
               </p>
             </div>
-            <div className="rounded-2xl bg-white/95 border border-white/30 px-8 py-6 shadow-xl shrink-0">
+            <div className="shrink-0">
               <Image
                 src={GRACELAND_EATS_LOGO}
                 alt="Graceland Eats logo"
