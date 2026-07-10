@@ -74,7 +74,7 @@ export const SITE_RESTAURANT_MENU_EMBED_URL =
 
 export const SITE_ADDRESS_LINES = (
   process.env.NEXT_PUBLIC_SITE_ADDRESS ??
-  "14D Mphephu Road, Thohoyandou, South Africa"
+  "Unit D, 14D Short St, Thohoyandou, 0950"
 )
   .split(",")
   .map((s) => s.trim())

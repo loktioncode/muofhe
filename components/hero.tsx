@@ -132,7 +132,7 @@ export function Hero() {
                   return (
                     <>
                       <span className="text-white/95 text-shadow-strong">{before}</span>
-                      <span className="text-accent text-shadow-strong [text-shadow:0_2px_14px_rgba(0,0,0,0.55),0_0_40px_rgba(201,162,39,0.35)]">
+                      <span className="text-secondary text-shadow-strong [text-shadow:0_2px_14px_rgba(0,0,0,0.55),0_0_40px_rgba(216,67,21,0.35)]">
                         {highlight}
                       </span>
                       <span className="text-white/95 text-shadow-strong">{rest}</span>

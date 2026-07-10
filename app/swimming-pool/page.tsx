@@ -4,10 +4,8 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { AnimatedSection } from "@/components/animated-section"
-import { SwimmingPoolGallery } from "@/components/swimming-pool-gallery"
 import { ArrowRight, Waves } from "lucide-react"
 import { SWIMMING_POOL_PHOTO } from "@/lib/lodge-media"
-import { SWIMMING_POOL_GALLERY } from "@/lib/swimming-pool-gallery"
 import { SITE_NAME } from "@/lib/site-config"
 
 export const metadata: Metadata = {
@@ -67,18 +65,6 @@ export default function SwimmingPoolPage() {
               leisure experience for all guests.
             </p>
           </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-muted/35 border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-12 max-w-2xl mx-auto">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/8 text-primary font-bold tracking-wider uppercase text-xs mb-4">
-              Gallery
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-medium text-primary">Around the pool</h2>
-          </AnimatedSection>
-          <SwimmingPoolGallery images={SWIMMING_POOL_GALLERY} siteName={SITE_NAME} />
         </div>
       </section>
 

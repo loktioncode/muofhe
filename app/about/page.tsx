@@ -101,8 +101,8 @@ export default function AboutPage() {
               About {SITE_NAME}
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-white/82 max-w-2xl leading-relaxed">
-              Muofhe Graceland Lodge embodies warm African hospitality and comfort in the heart of Limpopo. Situated on
-              Mphephu Road in Thohoyandou, we offer travelers, families, and business guests a peaceful place to
+              Muofhe Graceland Lodge embodies warm African hospitality and comfort in the heart of Limpopo. Situated at
+              Unit D, 14D Short St in Thohoyandou, we offer travelers, families, and business guests a peaceful place to
               experience the vibrant spirit of Venda.
             </p>
           </AnimatedSection>

@@ -15,7 +15,7 @@ export function LocalBusinessJsonLd() {
     email: SITE_EMAIL,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '14D Mphephu Road',
+      streetAddress: 'Unit D, 14D Short St',
       addressLocality: 'Thohoyandou',
       postalCode: '0950',
       addressRegion: 'Limpopo',
